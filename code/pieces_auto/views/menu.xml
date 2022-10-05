@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="main_pieces_auto_menu" 
+              name="Pieces Auto"
+    />
+    <menuitem id="pieces_auto_menu" 
+              name="Pieces Auto"
+              parent="main_pieces_auto_menu"
+    />   
+    <menuitem id="mark_menu" 
+              name="Marks" 
+              parent="pieces_auto_menu"
+              action="mark_list_action"
+    /> 
+</odoo>
