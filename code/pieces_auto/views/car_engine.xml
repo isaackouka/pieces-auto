@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.actions.act_window" id="car_engine_list_action">
+        <field name="name">Car Engine</field>
+        <field name="res_model">engine.auto</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add engine
+            </p>
+        </field>
+    </record> 
+    
+    <!-- tree -->
+    <record id="car_engine_view_tree" model="ir.ui.view">
+        <field name="name">engine.auto.view.tree</field>
+        <field name="model">engine.auto</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form -->
+    <record id="car_engine_view_form" model="ir.ui.view">
+        <field name="name">engine.auto.view.form</field>
+        <field name="model">engine.auto</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="model_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

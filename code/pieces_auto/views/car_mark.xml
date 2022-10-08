@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record model="ir.actions.act_window" id="mark_list_action">
-        <field name="name">Mark</field>
-        <field name="res_model">pieces_auto.mark</field>
+    <record model="ir.actions.act_window" id="car_mark_list_action">
+        <field name="name">Mark Car</field>
+        <field name="res_model">mark.car.auto</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_similing_face">Add Mark
             </p>
@@ -11,20 +11,19 @@
 
     <!-- model.name tree view -->
     <record id="mark_view_tree" model="ir.ui.view">
-        <field name="name">pieces_auto.mark.view.tree</field>
-        <field name="model">pieces_auto.mark</field>
+        <field name="name">mark.car.view.tree</field>
+        <field name="model">mark.car.auto</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-
             </tree>
         </field>
     </record>
 
     <!-- model.name form view -->
     <record id="mark_view_form" model="ir.ui.view">
-        <field name="name">Mark</field>
-        <field name="model">pieces_auto.mark</field>
+        <field name="name">mark.car.view.form</field>
+        <field name="model">mark.car.auto</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>

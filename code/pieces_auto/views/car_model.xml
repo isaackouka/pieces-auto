@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.actions.act_window" id="car_model_list_action">
+        <field name="name">Car Models</field>
+        <field name="res_model">model.auto</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add model
+            </p>
+        </field>
+    </record>
+
+    <!-- model.name tree view -->
+    <record id="car_model_view_tree" model="ir.ui.view">
+        <field name="name">model.auto.view.tree</field>
+        <field name="model">model.auto</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="mark_id" />
+                <field name="name"/>
+                <field name="engine_ids" widget="many2many_tags"/>
+                <field name="finition_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- model.name form view -->
+    <record id="car_model_view_form" model="ir.ui.view">
+        <field name="name">model.auto.view.form</field>
+        <field name="model">model.auto</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="mark_id" />
+                        <field name="name"/>
+                        <field name="engine_ids"/>
+                        <field name="finition_ids"/>
+                        <field name="year1"/>
+                        <field name="year2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

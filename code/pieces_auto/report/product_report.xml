@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="product_report" model="ir.actions.report">
+        <field name="name">Fiche Product</field>
+        <field name="model">product.template</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pieces_auto.product_template</field>
+        <field name="report_file">pieces_auto.product_template</field>
+        <field name="print_report_name">'Fiche Product - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="stock.model_product_template"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="product_template">
+        <t t-call="web.basic_layout">
+            <t t-call="web.html_container">
+
+                <t t-foreach="docs" t-as="o">
+                    <style>
+                        .important-2 {
+                        font-weight: 1000;
+                        }
+                        .text-large {
+                        font-size: 24px !important;
+                        }
+                        .text-small {
+                        font-size: 15px !important;
+                        }
+                        .text-underline {
+                        text-decoration: underline;
+                        }
+                        .NbDown{
+                            margin-top : 150px !important;
+                        }
+                        .checkbox {
+                            border: 1px solid #767676;
+                            border-radius: 2px;
+                            width: 14px;
+                            height: 14px;
+                            display: inline-block;
+                            text-align: center;
+                            position: relative;
+                        }
+                        .checkbox>i {
+                            display: block;
+                        }
+                    </style>
+                    <div class="page" style="font-size: 24px !important;">
+                        <div class="text-center mb-5">
+                            <h3 class="font-weight-bold text-underline">Informations du Produit</h3>
+                        </div>
+                        <div class="mb-2">
+                            <span class="font-weight-bold">Nom du Produit : </span>
+                            <span t-field="o.name"/>
+                        </div>
+                        <div class="mb-2">
+                            <span class="font-weight-bold">Reference : </span>
+                            <span t-field="o.default_code"/>
+                        </div>
+                        <div class="mb-2">
+                            <span class="font-weight-bold">Marque : </span>
+                            <span t-field="o.mark_id.name"/>
+                        </div>
+                        <div class="mb-2">
+                            <span class="font-weight-bold">Véhicules Compatible : </span>
+                            <t t-foreach="o.comp_ids" t-as="comp">
+                                <div>
+                                    <span t-field="comp.model_id.name"/> :
+                                    <t t-foreach="comp.engine_ids" t-as="engine">
+                                        <span t-field="engine.name"/> - 
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

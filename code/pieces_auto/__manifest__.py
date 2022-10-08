@@ -20,8 +20,15 @@
     'application': True,
 
     'data': [
-        'views/mark.xml',
+        'security/ir.model.access.csv',
+        'views/product_mark.xml',
+        'views/car_engine.xml',
+        'views/car_finition.xml',
+        'views/car_mark.xml',
+        'views/car_model.xml',
+        'views/product_template_view.xml',
         'views/menu.xml',
+        'report/product_report.xml',
     ],
     
     'demo': [
