@@ -22,19 +22,11 @@ class productCompatibility(models.Model):
                             'engine_ids': []
                         },
         }
-        # attrs2 = {'domain': {
-        #                     'finition_ids': []
-        #                 },
-        # }
         if self.model_id:
             engine_ids = self.model_id.mapped('engine_ids.id')
             attrs['domain']['engine_ids'].append(
                 ('id', 'in', engine_ids))
                 
-            # finition_ids = self.model_id.mapped('finition_ids.id')
-            # attrs2['domain']['finition_ids'].append(
-            #     ('id', 'in', finition_ids))
-        
         return attrs
 
     
