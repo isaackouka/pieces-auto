@@ -8,8 +8,12 @@ class productCompatibility(models.Model):
         comodel_name='model.auto'
     )
 
-    engine_ids = fields.Many2many(
+    engine_ids = fields.Many2one(
         comodel_name='engine.auto'
+    )
+
+    gearbox_ids = fields.Many2one(
+        comodel_name='gearbox.auto'
     )
 
     finition_ids = fields.Many2many(

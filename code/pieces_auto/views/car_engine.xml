@@ -16,6 +16,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="cylindre"/>
+                <field name="type"/>
+                <field name="energie"/>
+                <field name="vales"/>
+                <field name="powerful"/>
             </tree>
         </field>
     </record>
@@ -29,6 +34,11 @@
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="cylindre"/>
+                        <field name="type"/>
+                        <field name="energie"/>
+                        <field name="vales"/>
+                        <field name="powerful"/>
                         <field name="model_ids"/>
                     </group>
                 </sheet>

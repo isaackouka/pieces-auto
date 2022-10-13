@@ -14,7 +14,7 @@
             <xpath expr="//field[@name='default_code']" position="replace"></xpath>
             <xpath expr="//field[@name='detailed_type']" position="after">
                 <field name="default_code" string="Réference TBA"/>
-                <field name="reference_oe"/>
+                <field name="reference_oe" widget="many2many_tags"/>
                 <field name="short_reference"/>
             </xpath>
 
@@ -48,7 +48,8 @@
                                 <create name="add_car_control" string="Add Car"/>
                             </control>
                             <field name="model_id"/>
-                            <field name="engine_ids" widget="many2many_tags"/>
+                            <field name="engine_ids"/>
+                            <field name="gearbox_ids"/>
                         </tree>
                     </field>
                 </page>

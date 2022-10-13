@@ -3,5 +3,7 @@ mark_user,mark agent,model_mark_auto,,1,1,1,1
 mark_car_user,mark car agent,model_mark_car_auto,,1,1,1,1
 finition_car_user,finition car agent,model_finition_auto,,1,1,1,1
 engine_car_user,engine car agent,model_engine_auto,,1,1,1,1
+gearbox_car_user,gearbox car agent,model_gearbox_auto,,1,1,1,1
 model_car_user,model car agent,model_model_auto,,1,1,1,1
 comp_car_user,comp car agent,model_product_comp,,1,1,1,1
+acces_reference, acces reference,model_reference_oe,,1,1,1,1

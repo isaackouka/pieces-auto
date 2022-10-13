@@ -15,8 +15,8 @@
         <field name="model">model.auto</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="mark_id" />
                 <field name="name"/>
+                <field name="mark_id" />
                 <field name="engine_ids" widget="many2many_tags"/>
                 <field name="finition_ids" widget="many2many_tags"/>
             </tree>
@@ -31,10 +31,19 @@
             <form string="">
                 <sheet>
                     <group>
-                        <field name="mark_id" />
                         <field name="name"/>
+                        <field name="mark_id" />
+                        <field name="finition_ids" widget="many2many_tags"/>
                         <field name="engine_ids"/>
-                        <field name="finition_ids"/>
+                        <field name="gearbox_ids">
+                            <tree>
+                                <field name="type"/>
+                                <field name="number_gears"/>
+                            </tree>
+                        </field>
+
+                    </group>
+                    <group name="generation" string="Generation">
                         <field name="year1"/>
                         <field name="year2"/>
                     </group>
