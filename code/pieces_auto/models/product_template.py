@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from odoo.osv import expression
 
 
@@ -12,9 +12,18 @@ class ProductTemplate(models.Model):
         translate=True,
     )
 
-    mark_id = fields.Many2one(
-        comodel_name='mark.auto',
+    has_multi_name = fields.Boolean(
+        default=False,
+        string='Multi name'
     )
+
+    name_ids = fields.Many2many(
+        comodel_name='name.product',
+        string='Other names'
+    )
+
+    designation = fields.Char()
+
     reference_oe = fields.Many2many(
         comodel_name='reference.oe'
     )
@@ -23,11 +32,22 @@ class ProductTemplate(models.Model):
         compute='_compute_short_reference'
     )
 
+    mark_id = fields.Many2one(
+        comodel_name='mark.auto',
+    )
+
+    constructor_ids = fields.Many2many(
+        comodel_name='mark.car.auto',
+    )
+
+    front = fields.Char()
+    side = fields.Char()
+    pisition = fields.Char()
+    specification = fields.Char()
+    
     comp_ids = fields.Many2many(
         comodel_name='product.comp'
     )
-
-    designation = fields.Char()
 
     @api.depends('reference_oe')
     def _compute_short_reference(self):
@@ -41,6 +61,11 @@ class ProductTemplate(models.Model):
                     record.short_reference=''
             else:
                 record.short_reference = ''
+    
+    @api.model
+    def create(self, vals):
+        vals['default_code'] = self.env['ir.sequence'].next_by_code('tba.reference') or _("New")
+        return super(ProductTemplate,self).create(vals)
 
 
 class ReferenceOE(models.Model):
@@ -49,3 +74,8 @@ class ReferenceOE(models.Model):
     name = fields.Char(
         string='Reference OE'
     )
+
+class NameProduct(models.Model):
+    _name = 'name.product'
+
+    name = fields.Char()

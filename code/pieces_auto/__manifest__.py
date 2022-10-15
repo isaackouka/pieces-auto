@@ -21,6 +21,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'data/data.xml',
         'views/product_template_view.xml',
         'views/product_mark.xml',
         'views/car_engine.xml',

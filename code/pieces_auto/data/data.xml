@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">>
+        <record id="reference_product" model="ir.sequence">
+            <field name="name">Reference sequence</field>
+            <field name="code">tba.reference</field>
+            <field name="prefix">TBA/</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

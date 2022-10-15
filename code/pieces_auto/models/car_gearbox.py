@@ -7,7 +7,7 @@ class gearbox(models.Model):
     name = fields.Char(
         compute='_compute_name'
     )
-    type = fields.Selection(selection=[('bvm', 'BVM'),('bva', 'BVA')])
+    type = fields.Selection(selection=[('BVM', 'BVM'),('BVA', 'BVA')])
     number_gears = fields.Integer()
 
     @api.depends('type','number_gears')

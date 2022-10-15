@@ -3,56 +3,83 @@
     <record model="ir.ui.view" id="artec_product_template_form_inherit">
         <field name="name">Artec Product Template Form Inherit</field>
         <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='detailed_type']" position="before">
-                <field name="mark_id" />
+            <xpath expr="//div[@class='oe_title']" position="replace">
+                <div class="oe_title">
+                    <label for="name" string="Product name" />
+                    <h2>
+                        <div class="d-flex">
+                            <field name="name" />
+                        </div>
+                    </h2>
+                    <div class="d-flex">
+                        <span class="d-inline-block">
+                            <field name="has_multi_name" />
+                            <label for="has_multi_name" />
+                        </span>
+                    </div>
+                    <div class="d-flex">
+                        <span attrs="{'invisible':[('has_multi_name', '=', False)]}">
+                            <label for="name_ids" />
+                            <field name="name_ids" widget="many2many_tags" />
+                        </span>
+                    </div>
+                </div>
+                <div class="oe_title">
+                    <label for="designation" string="Designation" />
+                    <h2>
+                        <div class="d-flex">
+                            <field name="designation" />
+                        </div>
+                    </h2>
+                </div>
             </xpath>
-            <xpath expr="//field[@name='name']" position="replace">
-                <field name="name" />
-            </xpath>
+
             <xpath expr="//field[@name='default_code']" position="replace"></xpath>
+
             <xpath expr="//page[@name='general_information']/group[1]" position="before">
                 <group name="reference" string="Reference">
-                    <field name="default_code" string="Réference TBA"/>
+                    <field name="default_code" string="Réference TBA" readonly="1" />
                     <field name="reference_oe" widget="many2many_tags" />
                     <field name="short_reference" />
                 </group>
             </xpath>
-            <xpath expr="//div[@class='oe_title']" position="after">
-                <div class="oe_title">
-                    <label for="designation" string="Designation"/>
-                    <h1>
-                        <div class="d-flex">
-                            <field name="designation"/>
-                        </div>
-                    </h1>
-                </div>
+
+            <xpath expr="//field[@name='detailed_type']" position="before">
+                <field name="mark_id" />
             </xpath>
 
-            <xpath expr="//field[@name='priority']" position="attributes">
-                <attribute name="invisible">True</attribute>
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="constructor_ids" widget="many2many_tags" />
             </xpath>
+
             <xpath expr="//field[@name='product_tooltip']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
 
             <xpath expr="//page[@name='general_information']" position="after">
                 <page string="Compatible Cars" name="compatible_cars">
-                    <field  name="comp_ids" 
-                            widget="one2many"
-                    >
-                        <tree
-                            editable="bottom"
-                        >
+                    <group>
+                        <field name="front" />
+                        <field name="side" />
+                        <field name="pisition" />
+                        <field name="specification" />
+                    </group>
+
+                    <label for="comp_ids" string="Compatible cars" />
+                    <field name="comp_ids" widget="one2many">
+                        <tree editable="bottom">
                             <control>
-                                <create name="add_car_control" string="Add Car"/>
+                                <create name="add_car_control" string="Add Car" />
                             </control>
-                            <field name="model_id"/>
-                            <field name="engine_ids"/>
-                            <field name="gearbox_ids"/>
+                            <field name="model_id" />
+                            <field name="engine_ids" />
+                            <field name="energie" />
+                            <field name="gearbox_ids" />
                         </tree>
                     </field>
+
                 </page>
             </xpath>
         </field>
@@ -60,10 +87,10 @@
     <record model="ir.ui.view" id="artec_product_template_tree_inherit">
         <field name="name">Artec Product Template Tree Inherit</field>
         <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='responsible_id']" position="replace">
-                <field name="mark_id"/>
+                <field name="mark_id" />
             </xpath>
             <!-- <tree position="attributes">
                 <attribute name="decoration-danger">qty_available &lt;= 0</attribute>
@@ -72,7 +99,7 @@
                 <attribute name="invisible">True</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                 <field name="default_code"/>
+                <field name="default_code" />
             </xpath>
 
         </field>

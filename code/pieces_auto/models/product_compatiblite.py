@@ -1,8 +1,9 @@
 from odoo import models, fields, api
 
+
 class productCompatibility(models.Model):
-    _name          = 'product.comp'
-    _description   = 'Product Comp'
+    _name = 'product.comp'
+    _description = 'Product Comp'
 
     model_id = fields.Many2one(
         comodel_name='model.auto'
@@ -10,6 +11,12 @@ class productCompatibility(models.Model):
 
     engine_ids = fields.Many2one(
         comodel_name='engine.auto'
+    )
+
+    energie = fields.Selection(
+        selection=[('ess', 'Essence'),
+                   ('dsl', 'Diesel'),
+                   ('gpl', 'GPL')]
     )
 
     gearbox_ids = fields.Many2one(
@@ -23,14 +30,12 @@ class productCompatibility(models.Model):
     @api.onchange('model_id')
     def _onchange_model_id(self):
         attrs = {'domain': {
-                            'engine_ids': []
-                        },
+            'engine_ids': []
+        },
         }
         if self.model_id:
             engine_ids = self.model_id.mapped('engine_ids.id')
             attrs['domain']['engine_ids'].append(
                 ('id', 'in', engine_ids))
-                
-        return attrs
 
-    
+        return attrs
