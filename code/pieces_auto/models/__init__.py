@@ -7,3 +7,5 @@ from . import car_model
 from . import product_template
 from . import product_compatiblite
 from . import product_pisition
+from . import product_customs
+from . import product_family

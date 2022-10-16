@@ -23,7 +23,7 @@ class ProductTemplate(models.Model):
     )
 
     designation = fields.Char(
-    #    compute='_compute_designation',
+       compute='_compute_designation',
     )
 
     reference_oe = fields.Many2many(
@@ -32,6 +32,14 @@ class ProductTemplate(models.Model):
 
     short_reference = fields.Char(
         compute='_compute_short_reference'
+    )
+
+    category_ids = fields.Many2many(
+        comodel_name='product.category'
+    )
+
+    product_family = fields.Many2one(
+        comodel_name='product.family'
     )
 
     mark_id = fields.Many2one(
@@ -58,6 +66,11 @@ class ProductTemplate(models.Model):
         comodel_name='product.comp'
     )
 
+    customs_ids = fields.One2many(
+        'product.customs',
+        'product_id'
+    )
+
     @api.depends('reference_oe')
     def _compute_short_reference(self):
         for record in self:
@@ -71,12 +84,37 @@ class ProductTemplate(models.Model):
             else:
                 record.short_reference = ''
 
-    # @api.depends('name','comp_ids','specification','front_ids','side_ids','position_ids')
-    # def _compute_designation(self):
-    #     for record in self:
-    #             for car in record.comp_ids:
-    #                 cars = car.model_id.name+' '+car.year_start+'-'+car.year_end
-    #             record.designation=record.name +' '+ cars +' '+ record.specification
+    @api.depends('name','comp_ids','specification','front_ids','side_ids','position_ids')
+    def _compute_designation(self):
+        for record in self:
+            list_cars = ''
+            designation = record.name
+            if record.comp_ids:
+                for car in record.comp_ids:
+                    if car.model_id:
+                        list_cars = car.model_id.name
+                    if car.year_start:
+                        list_cars = list_cars +' '+car.year_start
+                    if car.year_end:
+                        list_cars = list_cars +'-'+car.year_end
+                    designation = designation +' '+ list_cars
+            if record.specification:
+                designation = designation +' '+record.specification
+            if record.front_ids:
+                designation = designation +' '+record.front_ids.name
+            if record.side_ids:
+                designation = designation +' '+record.side_ids.name
+            if record.position_ids:
+                designation = designation +' '+record.position_ids.name
+            
+            record.designation = designation
+            
+                
+                        
+
+                
+                
+                
 
     
     @api.model

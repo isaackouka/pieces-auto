@@ -29,6 +29,7 @@
         'views/car_mark.xml',
         'views/car_model.xml',
         'views/product_position.xml',
+        'views/product_family.xml',
         'views/menu.xml',
         'report/product_report.xml',
     ],

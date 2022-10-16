@@ -67,5 +67,10 @@
               parent="setting_auto_menu"
               action="product_position_action"
     />
+    <menuitem id="product_family_menu" 
+              name="Product family" 
+              parent="setting_auto_menu"
+              action="product_family_action"
+    />
 
 </odoo>

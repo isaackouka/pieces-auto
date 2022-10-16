@@ -6,19 +6,30 @@ class engine(models.Model):
     _description = 'engine auto'
 
     name = fields.Char(
-        compute='_compute_name'
+        compute='_compute_name',
     )
-    cylindre = fields.Char()
-    type = fields.Char()
+    cylindre = fields.Char(
+        required=True,
+    )
+    type = fields.Char(
+        required=True,
+    )
     energie = fields.Selection(
         selection=[('ess', 'Essence'),
                    ('dsl', 'Diesel'),
-                   ('gpl', 'GPL')]
+                   ('gpl', 'GPL')],
+        required=True,
     )
-    vales = fields.Integer()
-    powerful = fields.Integer()
+    vales = fields.Integer(
+        required=True,
+    )
+    powerful = fields.Integer(
+        required=True,
+    )
 
-    model_ids = fields.Many2many('model.auto')
+    model_ids = fields.Many2many(
+        comodel_name='model.auto'
+    )
 
     @api.depends('cylindre', 'type', 'powerful')
     def _compute_name(self):
