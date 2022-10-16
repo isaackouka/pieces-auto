@@ -28,6 +28,7 @@
         'views/car_finition.xml',
         'views/car_mark.xml',
         'views/car_model.xml',
+        'views/product_position.xml',
         'views/menu.xml',
         'report/product_report.xml',
     ],

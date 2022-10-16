@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from datetime import datetime
+from odoo import models, fields, api, _
 
 
 class productCompatibility(models.Model):
@@ -22,6 +23,11 @@ class productCompatibility(models.Model):
     gearbox_ids = fields.Many2one(
         comodel_name='gearbox.auto'
     )
+
+    year_start = fields.Selection([(str(y), str(y))
+                                for y in range(1970, (datetime.now().year)+1)])
+    year_end = fields.Selection([(str(y), str(y))
+                                for y in range(1970, (datetime.now().year)+1)])
 
     finition_ids = fields.Many2many(
         comodel_name='finition.auto'

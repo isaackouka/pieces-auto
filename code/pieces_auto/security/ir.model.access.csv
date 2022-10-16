@@ -6,4 +6,9 @@ engine_car_user,engine car agent,model_engine_auto,,1,1,1,1
 gearbox_car_user,gearbox car agent,model_gearbox_auto,,1,1,1,1
 model_car_user,model car agent,model_model_auto,,1,1,1,1
 comp_car_user,comp car agent,model_product_comp,,1,1,1,1
-acces_reference, acces reference,model_reference_oe,,1,1,1,1
+acces_reference,acces reference,model_reference_oe,,1,1,1,1
+acces_name,acces name,model_name_product,,1,1,1,1
+
+acces_product_front,acces_product_front,model_product_front,,1,1,1,1
+acces_product_side,acces_product_side,model_product_side,,1,1,1,1
+acces_product_position,acces_product_position,model_product_position,,1,1,1,1

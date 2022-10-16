@@ -51,7 +51,7 @@
             </xpath>
 
             <xpath expr="//field[@name='detailed_type']" position="after">
-                <field name="constructor_ids" widget="many2many_tags" />
+                <field name="constructor_ids" widget="many2many_tags"/>
             </xpath>
 
             <xpath expr="//field[@name='product_tooltip']" position="attributes">
@@ -61,9 +61,9 @@
             <xpath expr="//page[@name='general_information']" position="after">
                 <page string="Compatible Cars" name="compatible_cars">
                     <group>
-                        <field name="front" />
-                        <field name="side" />
-                        <field name="pisition" />
+                        <field name="front_ids" widget="many2many_tags"/>
+                        <field name="side_ids" widget="many2many_tags"/>
+                        <field name="position_ids" widget="many2many_tags"/>
                         <field name="specification" />
                     </group>
 
@@ -73,13 +73,14 @@
                             <control>
                                 <create name="add_car_control" string="Add Car" />
                             </control>
-                            <field name="model_id" />
-                            <field name="engine_ids" />
-                            <field name="energie" />
-                            <field name="gearbox_ids" />
+                            <field name="model_id"/>
+                            <field name="year_start" string="From"/>
+                            <field name="year_end" string="To"/>
+                            <field name="engine_ids"/>
+                            <field name="energie"/>
+                            <field name="gearbox_ids"/>
                         </tree>
                     </field>
-
                 </page>
             </xpath>
         </field>
@@ -95,11 +96,18 @@
             <!-- <tree position="attributes">
                 <attribute name="decoration-danger">qty_available &lt;= 0</attribute>
             </tree> -->
+
             <xpath expr="//field[@name='priority']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
+            <xpath expr="//field[@name='default_code']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                <field name="default_code" />
+                <field name="default_code"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="reference_oe" widget="many2many_tags"/>
             </xpath>
 
         </field>

@@ -22,7 +22,9 @@ class ProductTemplate(models.Model):
         string='Other names'
     )
 
-    designation = fields.Char()
+    designation = fields.Char(
+    #    compute='_compute_designation',
+    )
 
     reference_oe = fields.Many2many(
         comodel_name='reference.oe'
@@ -40,9 +42,16 @@ class ProductTemplate(models.Model):
         comodel_name='mark.car.auto',
     )
 
-    front = fields.Char()
-    side = fields.Char()
-    pisition = fields.Char()
+    front_ids = fields.Many2many(
+        comodel_name='product.front',
+    )
+    side_ids = fields.Many2many(
+        comodel_name='product.side',
+    )
+    position_ids = fields.Many2many(
+        comodel_name='product.position',
+    )
+    
     specification = fields.Char()
     
     comp_ids = fields.Many2many(
@@ -61,6 +70,14 @@ class ProductTemplate(models.Model):
                     record.short_reference=''
             else:
                 record.short_reference = ''
+
+    # @api.depends('name','comp_ids','specification','front_ids','side_ids','position_ids')
+    # def _compute_designation(self):
+    #     for record in self:
+    #             for car in record.comp_ids:
+    #                 cars = car.model_id.name+' '+car.year_start+'-'+car.year_end
+    #             record.designation=record.name +' '+ cars +' '+ record.specification
+
     
     @api.model
     def create(self, vals):

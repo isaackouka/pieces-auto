@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.actions.act_window" id="product_front_action">
+        <field name="name">Product Front</field>
+        <field name="res_model">product.front</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add Front
+            </p>
+        </field>
+    </record>
+    <record id="product_front_view_tree" model="ir.ui.view">
+        <field name="name">product.front.view.tree</field>
+        <field name="model">product.front</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="product_side_action">
+        <field name="name">Product Side</field>
+        <field name="res_model">product.side</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add side
+            </p>
+        </field>
+    </record>
+    <record id="product_side_view_tree" model="ir.ui.view">
+        <field name="name">product.side.view.tree</field>
+        <field name="model">product.side</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="product_position_action">
+        <field name="name">Product Position</field>
+        <field name="res_model">product.position</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add position
+            </p>
+        </field>
+    </record>
+    <record id="product_position_view_tree" model="ir.ui.view">
+        <field name="name">product.position.view.tree</field>
+        <field name="model">product.position</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

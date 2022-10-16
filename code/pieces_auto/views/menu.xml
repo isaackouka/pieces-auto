@@ -12,6 +12,11 @@
               name="Cars"
               parent="main_pieces_auto_menu"
     />
+
+    <menuitem id="setting_auto_menu" 
+              name="Settings"
+              parent="main_pieces_auto_menu"
+    />
     
     <menuitem id="pieces_auto_menu_product" 
               name="Products" 
@@ -46,5 +51,21 @@
               parent="car_auto_menu"
               action="car_mark_list_action"
     /> 
+
+    <menuitem id="product_front_menu" 
+              name="Product Front" 
+              parent="setting_auto_menu"
+              action="product_front_action"
+    />
+    <menuitem id="product_side_menu" 
+              name="Product Side" 
+              parent="setting_auto_menu"
+              action="product_side_action"
+    />
+    <menuitem id="product_position_menu" 
+              name="Product Position" 
+              parent="setting_auto_menu"
+              action="product_position_action"
+    />
 
 </odoo>

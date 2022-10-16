@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from datetime import datetime
 
 class model(models.Model):
     _name          = 'model.auto'
@@ -9,5 +10,5 @@ class model(models.Model):
     engine_ids = fields.Many2many("engine.auto")
     gearbox_ids = fields.Many2many("gearbox.auto")
     finition_ids = fields.Many2many("finition.auto")
-    year1 = fields.Integer()
-    year2 = fields.Integer()
+    year_start = fields.Selection([(str(y), str(y)) for y in range(1970, (datetime.now().year)+1)])
+    year_end = fields.Selection([(str(y), str(y)) for y in range(1970, (datetime.now().year)+1)])
