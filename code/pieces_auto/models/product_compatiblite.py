@@ -37,12 +37,16 @@ class productCompatibility(models.Model):
     @api.onchange('model_id')
     def _onchange_model_id(self):
         attrs = {'domain': {
-            'engine_ids': []
-        },
-        }
+            'engine_ids': [],
+            'gearbox_ids': [],
+        }}
         if self.model_id:
             engine_ids = self.model_id.mapped('engine_ids.id')
             attrs['domain']['engine_ids'].append(
                 ('id', 'in', engine_ids))
+
+            gearbox_ids = self.model_id.mapped('gearbox_ids.id')
+            attrs['domain']['gearbox_ids'].append(
+                ('id', 'in', gearbox_ids))
 
         return attrs

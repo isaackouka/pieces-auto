@@ -2,6 +2,7 @@ from odoo import models, fields, api, _
 from datetime import datetime
 from odoo.exceptions import ValidationError
 
+
 SELECTION = []
 
 class model(models.Model):
@@ -29,19 +30,30 @@ class model(models.Model):
                                   for y in range(1970, (datetime.now().year)+1)],
                                   required=True,
                                   )
-    year_end = fields.Selection([(str(y), str(y))
-                                for y in range(1970, (datetime.now().year)+1)])
+    # year_end = fields.Selection([(str(y), str(y))
+    #                             for y in range(1970, (datetime.now().year)+1)])
+
     
-    # year_end = fields.Selection(
-    #     selection='years_selection'
-    # )
+    
+    year_end = fields.Selection(
+        selection=SELECTION,
+    )
+
+    @api.onchange('year_start')
+    def years_selection(self):
+        for record in self:
+            global SELECTION
+            SELECTION = [(str(y), str(y)) for y in range(1970, (datetime.now().year)+1)]
+
 
     # @api.onchange('year_start')
     # def years_selection(self):
     #     for record in self:
+    #         global SELECTION
+    #         SELECTION = []
     #         year_list = []
-    #         for y in range(int(record._fields['year_start'].selection), datetime.now().year + 10):
-    #             year_list.append((str(y), str(y)))
+    #         for y in range(2000, datetime.now().year + 10):
+    #             year_list.append([str(y), str(y)])
     #         return year_list
 
 
