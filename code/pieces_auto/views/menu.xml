@@ -73,4 +73,10 @@
               action="product_family_action"
     />
 
+    <menuitem id="pieces_auto_menu_product_category" 
+              name="Products Categories" 
+              action="product.product_category_action_form"
+              parent="setting_auto_menu" 
+    />
+
 </odoo>

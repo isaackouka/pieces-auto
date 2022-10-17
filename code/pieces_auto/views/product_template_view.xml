@@ -36,34 +36,31 @@
                 </div>
             </xpath>
 
-            <xpath expr="//field[@name='default_code']" position="replace"></xpath>
-            <xpath expr="//field[@name='categ_id']" position="replace">
-                <field name="category_ids" widget="many2many_tags"/>
-                <field name="product_family"/>
-            </xpath>
-
-            <xpath expr="//page[@name='general_information']/group[1]" position="before">
-                <group name="reference" string="Reference">
-                    <field name="default_code" string="Réference TBA" readonly="1" />
-                    <field name="reference_oe" widget="many2many_tags" />
-                    <field name="short_reference" />
-                </group>
-            </xpath>
-
-            <xpath expr="//field[@name='detailed_type']" position="before">
-                <field name="mark_id" />
-            </xpath>
-
-            <xpath expr="//field[@name='detailed_type']" position="after">
-                <field name="constructor_ids" widget="many2many_tags"/>
-            </xpath>
-
-            <xpath expr="//field[@name='product_tooltip']" position="attributes">
-                <attribute name="invisible">True</attribute>
-            </xpath>
-
-            <xpath expr="//page[@name='general_information']" position="after">
-                <page string="Compatible Cars" name="compatible_cars">
+            <xpath expr="//page[@name='general_information']" position="before">
+                <page string="References" name="reference">
+                    <group name="reference" string="Reference">
+                        <field name="default_code" string="Réference TBA" readonly="1"/>
+                        <field name="reference_oe" widget="many2many_tags"/>
+                        <field name="short_reference"/>
+                        <field name="seller_ids" string="Vendors reference">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="product_code"/>
+                                <field name="company_id" invisible="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page string="Constructors" name="constructors">
+                    <group>
+                        <field name="constructor_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                <page string="Cars and Position" name="compatible_cars">
                     <group>
                         <field name="front_ids" widget="many2many_tags"/>
                         <field name="side_ids" widget="many2many_tags"/>
@@ -71,34 +68,55 @@
                         <field name="specification" />
                     </group>
 
-                    <label for="comp_ids" string="Compatible cars" />
+                    <label for="comp_ids" string="Compatible cars"/>
                     <field name="comp_ids" widget="one2many">
                         <tree editable="bottom">
                             <control>
                                 <create name="add_car_control" string="Add Car" />
                             </control>
-                            <field name="model_id"/>
-                            <field name="year_start" string="From"/>
-                            <field name="year_end" string="To"/>
-                            <field name="engine_ids"/>
-                            <field name="energie"/>
-                            <field name="gearbox_ids"/>
+                            <field name="model_id" />
+                            <field name="year_start" string="From" />
+                            <field name="year_end" string="To" />
+                            <field name="engine_ids" />
+                            <field name="energie" />
+                            <field name="gearbox_ids" />
                         </tree>
                     </field>
                 </page>
-            </xpath>
-            <xpath expr="//page[@name='compatible_cars']" position="after">
-                <page string="Customs Information" name="customs_information">
+                <page string="Attributes" name="attributes">
+                    <group>
+                        <field name="mark_id"/>
+                        <field name="product_family"/>
+                        <field name="category_ids" widget="many2many_tags"/>
+                    </group>
                     <field name="customs_ids">
                         <tree editable="bottom">
-                            <field name="manifacturing_country"/>
-                            <field name="origin_country"/>
-                            <field name="price_preferential"/>
-                            <field name="custom_taxe"/>
+                            <field name="hs_code" />
+                            <field name="hs_designation" />
+                            <field name="manifacturing_country" />
+                            <field name="origin_country" />
+                            <field name="price_preferential" />
+                            <field name="custom_taxe" />
+                            <field name="tva" />
                         </tree>
                     </field>
                 </page>
             </xpath>
+
+            <xpath expr="//page[@name='purchase']" position="replace"></xpath>
+
+            <xpath expr="//page[@name='general_information']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='invoicing']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            
         </field>
     </record>
     <record model="ir.ui.view" id="artec_product_template_tree_inherit">
@@ -120,10 +138,10 @@
                 <attribute name="invisible">True</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="before">
-                <field name="default_code"/>
+                <field name="default_code" />
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="reference_oe" widget="many2many_tags"/>
+                <field name="reference_oe" widget="many2many_tags" />
             </xpath>
 
         </field>
@@ -131,6 +149,18 @@
 
     <record id="stock.product_template_action_product" model="ir.actions.act_window">
         <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+
+    <record id="product_supplierinfo_tree_view" model="ir.ui.view">
+        <field name="name">product.supplierinfo.view.tree</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product_code"/>
+            </tree>
+        </field>
     </record>
 
 </odoo>

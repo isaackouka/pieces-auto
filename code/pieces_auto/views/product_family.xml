@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <record id="product_family_action" model="ir.actions.act_window">
-        <field name="name">product.family</field>
+        <field name="name">Product Family</field>
         <field name="res_model">product.family</field>
         <field name="view_mode">tree</field>
     </record>

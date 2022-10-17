@@ -63,7 +63,7 @@ class ProductTemplate(models.Model):
     specification = fields.Char()
     
     comp_ids = fields.Many2many(
-        comodel_name='product.comp'
+        comodel_name='product.comp',
     )
 
     customs_ids = fields.One2many(
@@ -96,7 +96,11 @@ class ProductTemplate(models.Model):
                     if car.year_start:
                         list_cars = list_cars +' '+car.year_start
                     if car.year_end:
-                        list_cars = list_cars +'-'+car.year_end
+                        if car.year_start != car.year_end:
+                            list_cars = list_cars +'-'+car.year_end
+                    if car != record.comp_ids[-1]:
+                        list_cars = list_cars +' _'
+
                     designation = designation +' '+ list_cars
             if record.specification:
                 designation = designation +' '+record.specification
@@ -108,15 +112,7 @@ class ProductTemplate(models.Model):
                 designation = designation +' '+record.position_ids.name
             
             record.designation = designation
-            
-                
-                        
-
-                
-                
-                
-
-    
+                            
     @api.model
     def create(self, vals):
         vals['default_code'] = self.env['ir.sequence'].next_by_code('tba.reference') or _("New")

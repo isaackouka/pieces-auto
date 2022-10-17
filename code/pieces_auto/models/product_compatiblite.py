@@ -7,7 +7,8 @@ class productCompatibility(models.Model):
     _description = 'Product Comp'
 
     model_id = fields.Many2one(
-        comodel_name='model.auto'
+        comodel_name='model.auto',
+        required=True, 
     )
 
     engine_ids = fields.Many2one(
