@@ -1,7 +1,9 @@
 from odoo import models, fields, api
 
-class mark(models.Model):
-    _name          = 'mark.car.auto'
-    _description   = 'mark car auto'
+class CarMark(models.Model):
+    _name = 'car.mark'
+    _description = 'Car Mark'
 
-    name           = fields.Char()
+    name = fields.Char(
+        required=True, 
+    )

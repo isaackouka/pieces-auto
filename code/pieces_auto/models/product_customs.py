@@ -5,10 +5,6 @@ class productCustoms(models.Model):
     _name = 'product.customs'
     _description = 'Product Customs'
 
-    hs_code = fields.Char(
-        required=True, 
-    )
-    hs_designation = fields.Char()
 
     manifacturing_country = fields.Many2one(
         comodel_name='res.country'
@@ -20,9 +16,15 @@ class productCustoms(models.Model):
 
     price_preferential = fields.Float()
 
-    custom_taxe = fields.Float()
+    tax = fields.Many2many(
+        comodel_name='account.tax',
+        domain=[('type_tax_use', '=', 'purchase')]
+    )
 
-    tva = fields.Float()
+    tva = fields.Many2one(
+        comodel_name='account.tax',
+        domain=[('type_tax_use', '=', 'purchase')]
+    )
 
     product_id = fields.Many2one(
         comodel_name='product.template'

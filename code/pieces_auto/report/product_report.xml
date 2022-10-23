@@ -63,7 +63,7 @@
                         </div>
                         <div class="mb-2">
                             <span class="font-weight-bold">Véhicules Compatible : </span>
-                            <t t-foreach="o.comp_ids" t-as="comp">
+                            <t t-foreach="o.compatible_car_ids" t-as="comp">
                                 <div>
                                     <span t-field="comp.model_id.name"/> :
                                     <t t-foreach="comp.engine_ids" t-as="engine">

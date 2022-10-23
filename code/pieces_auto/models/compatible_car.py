@@ -2,17 +2,21 @@ from datetime import datetime
 from odoo import models, fields, api, _
 
 
-class productCompatibility(models.Model):
-    _name = 'product.comp'
-    _description = 'Product Comp'
+class CompatibleCar(models.Model):
+    _name = 'compatible.car'
+    _description = 'Compatible Car'
 
     model_id = fields.Many2one(
-        comodel_name='model.auto',
+        comodel_name='car.model',
         required=True, 
     )
 
+    generation_ids = fields.Many2many(
+        comodel_name='model.generation',
+    )
+
     engine_ids = fields.Many2one(
-        comodel_name='engine.auto'
+        comodel_name='car.engine'
     )
 
     energie = fields.Selection(
@@ -22,16 +26,11 @@ class productCompatibility(models.Model):
     )
 
     gearbox_ids = fields.Many2one(
-        comodel_name='gearbox.auto'
+        comodel_name='car.gearbox'
     )
 
-    year_start = fields.Selection([(str(y), str(y))
-                                for y in range(1970, (datetime.now().year)+1)])
-    year_end = fields.Selection([(str(y), str(y))
-                                for y in range(1970, (datetime.now().year)+1)])
-
     finition_ids = fields.Many2many(
-        comodel_name='finition.auto'
+        comodel_name='car.finition'
     )
 
     @api.onchange('model_id')
@@ -39,14 +38,24 @@ class productCompatibility(models.Model):
         attrs = {'domain': {
             'engine_ids': [],
             'gearbox_ids': [],
+            'generation_ids': [],
         }}
         if self.model_id:
             engine_ids = self.model_id.mapped('engine_ids.id')
+
             attrs['domain']['engine_ids'].append(
                 ('id', 'in', engine_ids))
 
             gearbox_ids = self.model_id.mapped('gearbox_ids.id')
             attrs['domain']['gearbox_ids'].append(
                 ('id', 'in', gearbox_ids))
+            
+            generation_ids = self.model_id.mapped('generation_ids.id')
+            attrs['domain']['generation_ids'].append(
+                ('id', 'in', generation_ids))
+
+            self.engine_ids = [(5, False, False)]
+            self.gearbox_ids = [(5, False, False)]
+            self.generation_ids = [(5, False, False)]
 
         return attrs

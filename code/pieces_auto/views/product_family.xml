@@ -11,7 +11,7 @@
         <field name="model">product.family</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="name"/>
+                <field name="name" class="text-uppercase"/>
             </tree>
         </field>
     </record>

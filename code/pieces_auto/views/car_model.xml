@@ -2,7 +2,7 @@
 <odoo>
     <record model="ir.actions.act_window" id="car_model_list_action">
         <field name="name">Car Models</field>
-        <field name="res_model">model.auto</field>
+        <field name="res_model">car.model</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_similing_face">Add model
             </p>
@@ -11,41 +11,65 @@
 
     <!-- model.name tree view -->
     <record id="car_model_view_tree" model="ir.ui.view">
-        <field name="name">model.auto.view.tree</field>
-        <field name="model">model.auto</field>
+        <field name="name">car.model.view.tree</field>
+        <field name="model">car.model</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="mark_id" />
-                <field name="engine_ids" widget="many2many_tags"/>
-                <field name="finition_ids" widget="many2many_tags"/>
+                <field name="name" class="text-uppercase" />
+                <field name="mark_id" class="text-uppercase" />
+                <field name="engine_ids" widget="many2many_tags" class="text-uppercase" />
+                <field name="finition_ids" widget="many2many_tags" class="text-uppercase" />
             </tree>
         </field>
     </record>
 
     <!-- model.name form view -->
     <record id="car_model_view_form" model="ir.ui.view">
-        <field name="name">model.auto.view.form</field>
-        <field name="model">model.auto</field>
+        <field name="name">car.model.view.form</field>
+        <field name="model">car.model</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="mark_id" />
-                        <field name="finition_ids" widget="many2many_tags"/>
-                        <field name="engine_ids"/>
-                        <field name="gearbox_ids">
-                            <tree>
-                                <field name="type"/>
-                                <field name="number_gears"/>
-                            </tree>
-                        </field>
+                    <div class="oe_title">
+                        <label for="name" string="Name of model" class="oe_edit_only" />
+                        <h1>
+                            <field name="name" class="text-uppercase" />
+                        </h1>
+                    </div>
+                    <group name="first" col="2">
+                        <field name="mark_id" class="oe_inline text-uppercase" />
                     </group>
-                    <group name="generation" string="Generation">
-                        <field name="year_start" string="from"/>
-                        <field name="year_end" string="to"/>
+                    <group name="finitions" string="Finitions">
+                        <field name="finition_ids" widget="many2many_tags" class="text-uppercase" />
                     </group>
+
+                    <notebook>
+                        <page string="Generations">
+                            <field name="generation_ids" widget="one2many">
+                                <tree editable="bottom">
+                                    <field name="generation" class="text-uppercase" />
+                                    <field name="year_start" string="From" class="text-uppercase" />
+                                    <field name="year_end" string="To" class="text-uppercase" />
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Engine">
+                            <field name="engine_ids" class="text-uppercase" />
+                        </page>
+                        <page string="Boite vitesse et Traction">
+                            <group>
+                                <field name="gearbox_ids">
+                                    <tree>
+                                        <field name="type" class="text-uppercase" />
+                                        <field name="number_gears" class="text-uppercase" />
+                                    </tree>
+                                </field>
+                                <field name="tractions_ids" />
+                            </group>
+
+
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

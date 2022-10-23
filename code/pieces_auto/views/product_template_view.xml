@@ -5,32 +5,39 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='image_1920']" position="replace">
+                <field name="image_1920" widget="image" class="oe_avatar sizeproduct" options="{'preview_image': 'image_128','zoom':True ,'size':[200,200]}" />
+            </xpath>
+
             <xpath expr="//div[@class='oe_title']" position="replace">
+                <field name="purchase_ok" invisible="1" />
+                <field name="sale_ok" invisible="1" />
                 <div class="oe_title">
                     <label for="name" string="Product name" />
                     <h2>
                         <div class="d-flex">
-                            <field name="name" />
+                            <field name="name" class="text-uppercase" />
                         </div>
                     </h2>
                     <div class="d-flex">
                         <span class="d-inline-block">
-                            <field name="has_multi_name" />
-                            <label for="has_multi_name" />
+                            <field name="artec_has_multi_name" />
+                            <label for="artec_has_multi_name" />
                         </span>
                     </div>
                     <div class="d-flex">
-                        <span attrs="{'invisible':[('has_multi_name', '=', False)]}">
-                            <label for="name_ids" />
-                            <field name="name_ids" widget="many2many_tags" />
+                        <span attrs="{'invisible':[('artec_has_multi_name', '=', False)]}">
+                            <label for="artec_name_ids" />
+                            <field name="artec_name_ids" widget="many2many_tags" class="text-uppercase" />
                         </span>
                     </div>
                 </div>
                 <div class="oe_title">
-                    <label for="designation" string="Designation" />
+                    <label for="artec_designation" string="Designation" />
                     <h2>
                         <div class="d-flex">
-                            <field name="designation" />
+                            <field name="artec_designation" widget="artec_uppercase" />
                         </div>
                     </h2>
                 </div>
@@ -39,71 +46,76 @@
             <xpath expr="//page[@name='general_information']" position="before">
                 <page string="References" name="reference">
                     <group name="reference" string="Reference">
-                        <field name="default_code" string="Réference TBA" readonly="1"/>
-                        <field name="reference_oe" widget="many2many_tags"/>
-                        <field name="short_reference"/>
-                        <field name="seller_ids" string="Vendors reference">
+                        <field name="default_code" string="Réference TBA" readonly="1" />
+                        <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" />
+                        <field name="artec_short_reference" class="text-uppercase" />
+                        <field name="artec_reference_mark_ids" string="Alternative references">
                             <tree editable="bottom">
-                                <field name="name"/>
-                                <field name="product_code"/>
-                                <field name="company_id" invisible="1"/>
+                                <field name="mark_id" class="text-uppercase" />
+                                <field name="reference" class="text-uppercase" />
                             </tree>
                         </field>
                     </group>
                 </page>
                 <page string="Constructors" name="constructors">
                     <group>
-                        <field name="constructor_ids">
+                        <field name="artec_constructor_ids">
                             <tree editable="bottom">
-                                <field name="name"/>
+                                <field name="name" />
                             </tree>
                         </field>
                     </group>
                 </page>
                 <page string="Cars and Position" name="compatible_cars">
                     <group>
-                        <field name="front_ids" widget="many2many_tags"/>
-                        <field name="side_ids" widget="many2many_tags"/>
-                        <field name="position_ids" widget="many2many_tags"/>
-                        <field name="specification" />
+                        <field name="artec_front_ids" widget="many2many_tags" class="text-uppercase" />
+                        <field name="artec_side_ids" widget="many2many_tags" class="text-uppercase" />
+                        <field name="artec_position_ids" widget="many2many_tags" class="text-uppercase" />
+                        <field name="artec_specification" widget="many2many_tags" class="text-uppercase" />
+                        <field name="artec_observation" class="text-uppercase" />
                     </group>
 
-                    <label for="comp_ids" string="Compatible cars"/>
-                    <field name="comp_ids" widget="one2many">
+                    <label for="artec_compatible_car_ids" string="Compatible cars" />
+                    <field name="artec_compatible_car_ids" widget="one2many">
                         <tree editable="bottom">
                             <control>
                                 <create name="add_car_control" string="Add Car" />
                             </control>
-                            <field name="model_id" />
-                            <field name="year_start" string="From" />
-                            <field name="year_end" string="To" />
-                            <field name="engine_ids" />
-                            <field name="energie" />
-                            <field name="gearbox_ids" />
+                            <field name="model_id" class="text-uppercase" />
+                            <field name="generation_ids" widget="many2many_tags" />
+                            <field name="engine_ids" class="text-uppercase" />
+                            <field name="energie" class="text-uppercase" />
+                            <field name="gearbox_ids" class="text-uppercase" />
                         </tree>
                     </field>
                 </page>
                 <page string="Attributes" name="attributes">
                     <group>
-                        <field name="mark_id"/>
-                        <field name="product_family"/>
-                        <field name="category_ids" widget="many2many_tags"/>
+                        <field name="artec_mark_id" class="text-uppercase" />
+                        <field name="artec_product_family" class="text-uppercase" />
+                        <field name="artec_category_ids" widget="many2many_tags" class="text-uppercase" />
                     </group>
-                    <field name="customs_ids">
-                        <tree editable="bottom">
-                            <field name="hs_code" />
-                            <field name="hs_designation" />
-                            <field name="manifacturing_country" />
-                            <field name="origin_country" />
-                            <field name="price_preferential" />
-                            <field name="custom_taxe" />
-                            <field name="tva" />
-                        </tree>
-                    </field>
+                    <group string="Information douaniere">
+                        <field name="artec_hs_code" class="text-uppercase" />
+                        <field name="artec_hs_designation" class="text-uppercase" />
+                        <field name="artec_tax_custom" />
+                        <field name="artec_locally_made" />
+                        <field name="artec_customs_ids" string="Product country">
+                            <tree editable="bottom">
+                                <field name="manifacturing_country" class="text-uppercase" />
+                                <field name="origin_country" class="text-uppercase" />
+                                <field name="price_preferential" class="text-uppercase" />
+                                <field name="tax" widget="many2many_tags" class="text-uppercase" />
+                                <field name="tva" class="text-uppercase" />
+                            </tree>
+                        </field>
+                    </group>
                 </page>
             </xpath>
 
-            <xpath expr="//page[@name='purchase']" position="replace"></xpath>
+            <xpath expr="//page[@name='purchase']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
 
             <xpath expr="//page[@name='general_information']" position="attributes">
                 <attribute name="invisible">True</attribute>
@@ -116,24 +128,28 @@
             <xpath expr="//page[@name='invoicing']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
-            
+
         </field>
     </record>
+
     <record model="ir.ui.view" id="artec_product_template_tree_inherit">
         <field name="name">Artec Product Template Tree Inherit</field>
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='responsible_id']" position="replace">
-                <field name="mark_id" />
+                <field name="artec_mark_id" class="text-uppercase" />
+            </xpath>
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="name" class="text-uppercase" />
             </xpath>
             <!-- <tree position="attributes">
                 <attribute name="decoration-danger">qty_available &lt;= 0</attribute>
             </tree> -->
 
-            <xpath expr="//field[@name='priority']" position="attributes">
+            <!-- <xpath expr="//field[@name='priority']" position="attributes">
                 <attribute name="invisible">True</attribute>
-            </xpath>
+            </xpath> -->
             <xpath expr="//field[@name='default_code']" position="attributes">
                 <attribute name="invisible">True</attribute>
             </xpath>
@@ -141,9 +157,8 @@
                 <field name="default_code" />
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="reference_oe" widget="many2many_tags" />
+                <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" />
             </xpath>
-
         </field>
     </record>
 
@@ -151,14 +166,20 @@
         <field name="view_mode">tree,kanban,form</field>
     </record>
 
-
-    <record id="product_supplierinfo_tree_view" model="ir.ui.view">
-        <field name="name">product.supplierinfo.view.tree</field>
-        <field name="model">product.supplierinfo</field>
+    <record model="ir.actions.act_window" id="product_specification_action">
+        <field name="name">Product Specification</field>
+        <field name="res_model">product.specifiation</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_similing_face">Add Specification
+            </p>
+        </field>
+    </record>
+    <record id="product_specification_view_tree" model="ir.ui.view">
+        <field name="name">product.specifiation.view.tree</field>
+        <field name="model">product.specifiation</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="product_code"/>
+            <tree editable="bottom">
+                <field name="name" class="text-uppercase" />
             </tree>
         </field>
     </record>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Pieces Auto",
+    'name': "TB Auto",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -16,7 +16,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base','mail','contacts','product','stock'],
+    'depends': ['base','mail','contacts','product','stock','account'],
     'application': True,
 
     'data': [

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <menuitem id="main_pieces_auto_menu" 
-              name="Pieces Auto"
+              name="TB Auto"
     />
     <menuitem id="pieces_auto_menu" 
               name="Products"
@@ -67,14 +67,19 @@
               parent="setting_auto_menu"
               action="product_position_action"
     />
+    <menuitem id="product_specification_menu" 
+              name="Product Specifications" 
+              parent="setting_auto_menu"
+              action="product_specification_action"
+              sequence="4"
+    />
     <menuitem id="product_family_menu" 
-              name="Product family" 
+              name="Product Categories" 
               parent="setting_auto_menu"
               action="product_family_action"
     />
-
     <menuitem id="pieces_auto_menu_product_category" 
-              name="Products Categories" 
+              name="Products family" 
               action="product.product_category_action_form"
               parent="setting_auto_menu" 
     />

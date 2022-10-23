@@ -1,8 +1,8 @@
 from odoo import models, fields, api
 
-class gearbox(models.Model):
-    _name = 'gearbox.auto'
-    _description = 'gearbox auto'
+class CarGearbox(models.Model):
+    _name = 'car.gearbox'
+    _description = 'Car Gearbox'
 
     name = fields.Char(
         compute='_compute_name'

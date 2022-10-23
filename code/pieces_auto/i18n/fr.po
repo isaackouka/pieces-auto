@@ -1,0 +1,1142 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tb_auto
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-19 20:29+0000\n"
+"PO-Revision-Date: 2022-10-19 20:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tb_auto
+#: model:ir.actions.report,print_report_name:tb_auto.product_report
+msgid "'Fiche Product - %s' % (object.name)"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1970
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1970
+msgid "1970"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1971
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1971
+msgid "1971"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1972
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1972
+msgid "1972"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1973
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1973
+msgid "1973"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1974
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1974
+msgid "1974"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1975
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1975
+msgid "1975"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1976
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1976
+msgid "1976"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1977
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1977
+msgid "1977"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1978
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1978
+msgid "1978"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1979
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1979
+msgid "1979"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1980
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1980
+msgid "1980"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1981
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1981
+msgid "1981"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1982
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1982
+msgid "1982"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1983
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1983
+msgid "1983"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1984
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1984
+msgid "1984"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1985
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1985
+msgid "1985"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1986
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1986
+msgid "1986"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1987
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1987
+msgid "1987"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1988
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1988
+msgid "1988"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1989
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1989
+msgid "1989"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1990
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1990
+msgid "1990"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1991
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1991
+msgid "1991"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1992
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1992
+msgid "1992"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1993
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1993
+msgid "1993"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1994
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1994
+msgid "1994"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1995
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1995
+msgid "1995"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1996
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1996
+msgid "1996"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1997
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1997
+msgid "1997"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1998
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1998
+msgid "1998"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__1999
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__1999
+msgid "1999"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2000
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2000
+msgid "2000"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2001
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2001
+msgid "2001"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2002
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2002
+msgid "2002"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2003
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2003
+msgid "2003"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2004
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2004
+msgid "2004"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2005
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2005
+msgid "2005"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2006
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2006
+msgid "2006"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2007
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2007
+msgid "2007"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2008
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2008
+msgid "2008"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2009
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2009
+msgid "2009"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2010
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2010
+msgid "2010"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2011
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2011
+msgid "2011"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2012
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2012
+msgid "2012"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2013
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2013
+msgid "2013"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2014
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2014
+msgid "2014"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2015
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2015
+msgid "2015"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2016
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2016
+msgid "2016"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2017
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2017
+msgid "2017"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2018
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2018
+msgid "2018"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2019
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2019
+msgid "2019"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2020
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2020
+msgid "2020"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2021
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2021
+msgid "2021"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_end__2022
+#: model:ir.model.fields.selection,name:tb_auto.selection__model_generation__year_start__2022
+msgid "2022"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.product_template
+msgid "<span class=\"font-weight-bold\">Marque : </span>"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.product_template
+msgid "<span class=\"font-weight-bold\">Nom du Produit : </span>"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.product_template
+msgid "<span class=\"font-weight-bold\">Reference : </span>"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.product_template
+msgid "<span class=\"font-weight-bold\">Véhicules Compatible : </span>"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Add Car"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.product_front_action
+msgid "Add Front"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.car_mark_list_action
+#: model_terms:ir.actions.act_window,help:tb_auto.product_mark_list_action
+msgid "Add Mark"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.product_specification_action
+msgid "Add Specification"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.car_engine_list_action
+msgid "Add engine"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.car_finition_list_action
+msgid "Add finition"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.car_model_list_action
+msgid "Add model"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.product_position_action
+msgid "Add position"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.actions.act_window,help:tb_auto.product_side_action
+msgid "Add side"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Alternative references"
+msgstr "References alternatives "
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_compatible_car_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_compatible_car_ids
+msgid "Artec Compatible Car"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_customs_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_customs_ids
+msgid "Artec Customs"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_reference_mark_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_reference_mark_ids
+msgid "Artec Reference Mark"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Attributes"
+msgstr "les Attributs"
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__car_gearbox__type__bva
+msgid "BVA"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__car_gearbox__type__bvm
+msgid "BVM"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.car_engine_list_action
+#: model:ir.model,name:tb_auto.model_car_engine
+msgid "Car Engine"
+msgstr " Moteurs"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.car_finition_list_action
+msgid "Car Finition"
+msgstr " Finitions"
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_car_gearbox
+msgid "Car Gearbox"
+msgstr "Boite de vitesse"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.car_mark_list_action
+#: model:ir.model,name:tb_auto.model_car_mark
+msgid "Car Mark"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_car_model
+msgid "Car Model"
+msgstr "Modele"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.car_model_list_action
+msgid "Car Models"
+msgstr "Modele"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.car_auto_menu
+msgid "Cars"
+msgstr "Véhicule"
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Cars and Position"
+msgstr "Véhicules et Position"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_category_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_category_ids
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_compatible_car
+msgid "Compatible Car"
+msgstr "Véhicule Compatible"
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Compatible cars"
+msgstr "Véhicule Compatible"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_constructor_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_constructor_ids
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Constructors"
+msgstr "Constructeurs"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__create_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__create_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__custom_taxe
+msgid "Custom Taxe"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Information douaniere"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__cylindre
+msgid "Cylindre"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_designation
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_designation
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Designation"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__car_engine__energie__dsl
+#: model:ir.model.fields.selection,name:tb_auto.selection__compatible_car__energie__dsl
+msgid "Diesel"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__display_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__energie
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__energie
+msgid "Energie"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__engine_ids
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__engine_ids
+#: model:ir.ui.menu,name:tb_auto.car_engine_menu
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "Engine"
+msgstr "Moteurs"
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__car_engine__energie__ess
+#: model:ir.model.fields.selection,name:tb_auto.selection__compatible_car__energie__ess
+msgid "Essence"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_product_family
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_product_family
+msgid "Family"
+msgstr "Famille"
+
+#. module: tb_auto
+#: model:ir.actions.report,name:tb_auto.product_report
+msgid "Fiche Product"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__finition_ids
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__finition_ids
+msgid "Finition"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.car_finition_menu
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "Finitions"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "From"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_front_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_front_ids
+msgid "Front"
+msgstr "Face"
+
+#. module: tb_auto
+#: model:ir.model.fields.selection,name:tb_auto.selection__car_engine__energie__gpl
+#: model:ir.model.fields.selection,name:tb_auto.selection__compatible_car__energie__gpl
+msgid "GPL"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__gearbox_ids
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__gearbox_ids
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "Gearbox"
+msgstr "Boite de vitesse"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__generation_ids
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__generation_ids
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__generation
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "Generation"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_hs_code
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_hs_code
+msgid "HS Code"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_hs_designation
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_hs_designation
+msgid "HS Designation"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__id
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__id
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__id
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__id
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__id
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__id
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__id
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__id
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__id
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__id
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__image
+msgid "Image"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.product_template
+msgid "Informations du Produit"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_car_model____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_family____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_front____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_name____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_position____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_side____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation____last_update
+#: model:ir.model.fields,field_description:tb_auto.field_product_template____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__write_uid
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__write_date
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_locally_made
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_locally_made
+msgid "Locally made"
+msgstr "Fabriqué localement"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__manifacturing_country
+msgid "Manifacturing Country"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__mark_id
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__mark_id
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_mark_id
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_mark_id
+msgid "Mark"
+msgstr "Marque"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.car_mark_menu
+msgid "Marks"
+msgstr "Marque de véhicule"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__model_ids
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__model_ids
+#: model:ir.model.fields,field_description:tb_auto.field_compatible_car__model_id
+msgid "Model"
+msgstr "Modèles"
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_model_traction
+msgid "Model Traction"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_model_generation
+msgid "Model generation"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.car_model_menu
+msgid "Models"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_has_multi_name
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_has_multi_name
+msgid "Multi name"
+msgstr "Plusieurs noms"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__name
+#: model:ir.model.fields,field_description:tb_auto.field_car_finition__name
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__name
+#: model:ir.model.fields,field_description:tb_auto.field_car_mark__name
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__name
+#: model:ir.model.fields,field_description:tb_auto.field_engine_type__name
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__name
+#: model:ir.model.fields,field_description:tb_auto.field_model_traction__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_family__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_front__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_mark__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_name__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_position__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_side__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_specifiation__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "Name of model"
+msgstr "Nom du modéle"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__number_gears
+msgid "Number Gears"
+msgstr "Nombre de vitesse"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_observation
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_observation
+msgid "Observations"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__origin_country
+msgid "Origin Country"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_name_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_name_ids
+msgid "Other names"
+msgstr "Autre nom"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_position_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_position_ids
+msgid "Position"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__powerful
+msgid "Powerful"
+msgstr "Puissance"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__price_preferential
+msgid "Price Preferential"
+msgstr "Tarif préférentiel"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__product_id
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__product_id
+msgid "Product"
+msgstr "Produits"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.product_family_menu
+msgid "Product Categories"
+msgstr "Catégorie"
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_customs
+msgid "Product Customs"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_family_action
+msgid "Product Family"
+msgstr "Famille"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_front_action
+#: model:ir.ui.menu,name:tb_auto.product_front_menu
+msgid "Product Front"
+msgstr "Face"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_mark_list_action
+#: model:ir.model,name:tb_auto.model_product_mark
+msgid "Product Mark"
+msgstr "Marque de produit"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.product_mark_menu
+msgid "Product Marks"
+msgstr "Marque de produit"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_position_action
+#: model:ir.ui.menu,name:tb_auto.product_position_menu
+msgid "Product Position"
+msgstr "Positions"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_side_action
+#: model:ir.ui.menu,name:tb_auto.product_side_menu
+msgid "Product Side"
+msgstr "Côté"
+
+#. module: tb_auto
+#: model:ir.actions.act_window,name:tb_auto.product_specification_action
+msgid "Product Specification"
+msgstr "Specification"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.product_specification_menu
+msgid "Product Specifications"
+msgstr "Specification"
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Product country"
+msgstr "Pays de produit"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__name
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Product name"
+msgstr "Nom "
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.pieces_auto_menu
+#: model:ir.ui.menu,name:tb_auto.pieces_auto_menu_product
+msgid "Products"
+msgstr "Produits"
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.pieces_auto_menu_product_category
+msgid "Products family"
+msgstr "Famille"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_alternative_references__reference
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Reference"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_reference_oe
+#: model:ir.model.fields,field_description:tb_auto.field_product_referenceoe__name
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_reference_oe
+msgid "Reference OE"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "References"
+msgstr ""
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.artec_product_template_form_inherit
+msgid "Réference TBA"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.setting_auto_menu
+msgid "Settings"
+msgstr "Paramètre"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_short_reference
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_short_reference
+msgid "Short Reference"
+msgstr "Reference courte"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_side_ids
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_side_ids
+msgid "Side"
+msgstr "Coté"
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_specification
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_specification
+msgid "Specification"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.ui.menu,name:tb_auto.main_pieces_auto_menu
+msgid "TB Auto"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_product__artec_tax_custom
+#: model:ir.model.fields,field_description:tb_auto.field_product_template__artec_tax_custom
+msgid "Tax Custom"
+msgstr "Tax douanière"
+
+#. module: tb_auto
+#: model_terms:ir.ui.view,arch_db:tb_auto.car_model_view_form
+msgid "To"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_model__tractions_ids
+msgid "Tractions"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_product_customs__tva
+msgid "Tva"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__type
+#: model:ir.model.fields,field_description:tb_auto.field_car_gearbox__type
+msgid "Type"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_car_engine__valves
+msgid "Valves"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__year_end
+msgid "Year End"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model.fields,field_description:tb_auto.field_model_generation__year_start
+msgid "Year Start"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_alternative_references
+msgid "alternative.references"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_engine_type
+msgid "engine.type"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_car_finition
+msgid "finition auto"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_family
+msgid "product.family"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_front
+msgid "product.front"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_name
+msgid "product.name"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_position
+msgid "product.position"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_referenceoe
+msgid "product.referenceoe"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_side
+msgid "product.side"
+msgstr ""
+
+#. module: tb_auto
+#: model:ir.model,name:tb_auto.model_product_specifiation
+msgid "product.specifiation"
+msgstr ""

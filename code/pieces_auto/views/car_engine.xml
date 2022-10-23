@@ -2,44 +2,44 @@
 <odoo>
     <record model="ir.actions.act_window" id="car_engine_list_action">
         <field name="name">Car Engine</field>
-        <field name="res_model">engine.auto</field>
+        <field name="res_model">car.engine</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_similing_face">Add engine
             </p>
         </field>
-    </record> 
-    
+    </record>
+
     <!-- tree -->
     <record id="car_engine_view_tree" model="ir.ui.view">
-        <field name="name">engine.auto.view.tree</field>
-        <field name="model">engine.auto</field>
+        <field name="name">car.engine.view.tree</field>
+        <field name="model">car.engine</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="cylindre"/>
-                <field name="type"/>
-                <field name="energie"/>
-                <field name="vales"/>
-                <field name="powerful"/>
+                <field name="name" class="text-uppercase" />
+                <field name="cylindre" class="text-uppercase" />
+                <field name="type" class="text-uppercase" />
+                <field name="energie" class="text-uppercase" />
+                <field name="valves" class="text-uppercase" />
+                <field name="powerful" class="text-uppercase" />
             </tree>
         </field>
     </record>
 
     <!-- form -->
     <record id="car_engine_view_form" model="ir.ui.view">
-        <field name="name">engine.auto.view.form</field>
-        <field name="model">engine.auto</field>
+        <field name="name">car.engine.view.form</field>
+        <field name="model">car.engine</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="cylindre"/>
-                        <field name="type"/>
-                        <field name="energie"/>
-                        <field name="vales"/>
-                        <field name="powerful"/>
-                        <field name="model_ids"/>
+                        <field name="name" class="text-uppercase" />
+                        <field name="cylindre" class="text-uppercase" />
+                        <field name="type" class="text-uppercase" />
+                        <field name="energie" class="text-uppercase" />
+                        <field name="valves" class="text-uppercase" />
+                        <field name="powerful" class="text-uppercase" />
+                        <field name="model_ids" class="text-uppercase" />
                     </group>
                 </sheet>
             </form>

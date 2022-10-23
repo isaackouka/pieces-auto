@@ -3,76 +3,67 @@ from datetime import datetime
 from odoo.exceptions import ValidationError
 
 
-SELECTION = []
-
-class model(models.Model):
-    _name = 'model.auto'
-    _description = 'model auto'
+class CarModel(models.Model):
+    _name = 'car.model'
+    _description = 'Car Model'
 
     mark_id = fields.Many2one(
-        comodel_name='mark.car.auto',
+        comodel_name='car.mark',
+        required=True,
     )
     name = fields.Char(
         required=True,
     )
     engine_ids = fields.Many2many(
-        comodel_name='engine.auto',
+        comodel_name='car.engine',
         required=True,
     )
     gearbox_ids = fields.Many2many(
-        comodel_name='gearbox.auto',
+        comodel_name='car.gearbox',
         required=True,
     )
     finition_ids = fields.Many2many(
-        comodel_name='finition.auto',
+        comodel_name='car.finition',
     )
+    generation_ids = fields.Many2many(
+        comodel_name='model.generation'
+    )
+
+    tractions_ids = fields.Many2many(
+        comodel_name='model.traction'
+    )
+
+    
+class ModelGeneration(models.Model):
+    _name = 'model.generation'
+    _description = 'Model generation'
+
+    name = fields.Char(
+        compute='_compute_name',
+    )
+
+    generation = fields.Integer(
+        required=True, 
+    )
+
     year_start = fields.Selection([(str(y), str(y))
                                   for y in range(1970, (datetime.now().year)+1)],
                                   required=True,
                                   )
-    # year_end = fields.Selection([(str(y), str(y))
-    #                             for y in range(1970, (datetime.now().year)+1)])
+    year_end = fields.Selection([(str(y), str(y))
+                                for y in range(1970, (datetime.now().year)+1)])
 
-    
-    
-    year_end = fields.Selection(
-        selection=SELECTION,
-    )
-
-    @api.onchange('year_start')
-    def years_selection(self):
+    @api.depends('generation')
+    def _compute_name(self):
         for record in self:
-            global SELECTION
-            SELECTION = [(str(y), str(y)) for y in range(1970, (datetime.now().year)+1)]
+            if record.generation:
+                record.name = str(record.generation)
+            else:
+                record.name = ''
 
 
-    # @api.onchange('year_start')
-    # def years_selection(self):
-    #     for record in self:
-    #         global SELECTION
-    #         SELECTION = []
-    #         year_list = []
-    #         for y in range(2000, datetime.now().year + 10):
-    #             year_list.append([str(y), str(y)])
-    #         return year_list
+class ModelTracion(models.Model):
+    _name = 'model.traction'
+    _description = 'Model Traction'
 
-
-    @api.constrains('year_end')
-    def check_year(self):
-        for record in self:
-            if int(record.year_end) < int(record.year_start):
-                raise ValidationError(_("Invalid Year End"))
-
-    # @api.onchange('year_start')
-    # def _onchange_year_start(self):
-    #     for record in self:
-            
-    #         global SELECTION
-    #         SELECTION = []
-    #         if record.year_start:
-    #             for year in range(int(record.year_start), datetime.now().year + 1):
-    #                 SELECTION.append((str(year), str(year)))
-    #         record._fields['year_end'].selection = dict(SELECTION)
-    #         attrs = {'selection': {'year_end': SELECTION}}
-    #         return {'1': '2'}
-        
+    name = fields.Char()

@@ -1,9 +1,8 @@
 from odoo import models, fields, api
 
-
-class engine(models.Model):
-    _name = 'engine.auto'
-    _description = 'engine auto'
+class CarEngine(models.Model):
+    _name = 'car.engine'
+    _description = 'Car Engine'
 
     name = fields.Char(
         compute='_compute_name',
@@ -11,7 +10,8 @@ class engine(models.Model):
     cylindre = fields.Char(
         required=True,
     )
-    type = fields.Char(
+    type = fields.Many2one(
+        comodel_name='engine.type',
         required=True,
     )
     energie = fields.Selection(
@@ -20,7 +20,7 @@ class engine(models.Model):
                    ('gpl', 'GPL')],
         required=True,
     )
-    vales = fields.Integer(
+    valves = fields.Integer(
         required=True,
     )
     powerful = fields.Integer(
@@ -28,7 +28,7 @@ class engine(models.Model):
     )
 
     model_ids = fields.Many2many(
-        comodel_name='model.auto'
+        comodel_name='car.model'
     )
 
     @api.depends('cylindre', 'type', 'powerful')
@@ -36,6 +36,12 @@ class engine(models.Model):
         for record in self:
             if record.cylindre and record.type and record.powerful:
                 record.name = record.cylindre+' ' + \
-                    record.type+' '+str(record.powerful)+'ch'
+                    record.type.name+' '+str(record.powerful)+'ch'
             else:
                 record.name = ''
+
+
+class EngineType(models.Model):
+    _name = 'engine.type'
+    
+    name = fields.Char()

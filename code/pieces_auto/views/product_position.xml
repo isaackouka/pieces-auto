@@ -14,7 +14,7 @@
         <field name="model">product.front</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="name"/>
+                <field name="name" class="text-uppercase" />
             </tree>
         </field>
     </record>
@@ -32,7 +32,7 @@
         <field name="model">product.side</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="name"/>
+                <field name="name" class="text-uppercase" />
             </tree>
         </field>
     </record>
@@ -50,7 +50,7 @@
         <field name="model">product.position</field>
         <field name="arch" type="xml">
             <tree editable="bottom">
-                <field name="name"/>
+                <field name="name" class="text-uppercase" />
             </tree>
         </field>
     </record>

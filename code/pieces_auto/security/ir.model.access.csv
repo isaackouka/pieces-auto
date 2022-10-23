@@ -1,16 +1,23 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-mark_user,mark agent,model_mark_auto,,1,1,1,1
-mark_car_user,mark car agent,model_mark_car_auto,,1,1,1,1
-finition_car_user,finition car agent,model_finition_auto,,1,1,1,1
-engine_car_user,engine car agent,model_engine_auto,,1,1,1,1
-gearbox_car_user,gearbox car agent,model_gearbox_auto,,1,1,1,1
-model_car_user,model car agent,model_model_auto,,1,1,1,1
-comp_car_user,comp car agent,model_product_comp,,1,1,1,1
-acces_reference,acces reference,model_reference_oe,,1,1,1,1
-acces_name,acces name,model_name_product,,1,1,1,1
 
-acces_product_front,acces_product_front,model_product_front,,1,1,1,1
-acces_product_side,acces_product_side,model_product_side,,1,1,1,1
-acces_product_position,acces_product_position,model_product_position,,1,1,1,1
-acces_product_customs,acces_product_customs,model_product_customs,,1,1,1,1
-acces_product_family,acces_product_family,model_product_family,,1,1,1,1
+access_product_mark,access_product_mark,model_product_mark,base.group_user,1,1,1,1
+access_product_name,access_product_name,model_product_name,base.group_user,1,1,1,1
+access_product_referenceoe,access_product_referenceoe,model_product_referenceoe,base.group_user,1,1,1,1
+access_compatible_car,access_compatible_car,model_compatible_car,base.group_user,1,1,1,1
+access_car_engine,access_car_engine,model_car_engine,base.group_user,1,1,1,1
+access_engine_type,access_engine_type,model_engine_type,base.group_user,1,1,1,1
+access_car_finition,access_car_finition,model_car_finition,base.group_user,1,1,1,1
+access_model_generation,access_model_generation,model_model_generation,base.group_user,1,1,1,1
+access_car_gearbox,access_car_gearbox,model_car_gearbox,base.group_user,1,1,1,1
+access_car_mark,access_car_mark,model_car_mark,base.group_user,1,1,1,1
+access_car_model,access_car_model,model_car_model,base.group_user,1,1,1,1
+access_product_front,access_product_front,model_product_front,base.group_user,1,1,1,1
+access_product_side,access_product_side,model_product_side,base.group_user,1,1,1,1
+access_product_position,access_product_position,model_product_position,base.group_user,1,1,1,1
+access_product_customs,access_product_customs,model_product_customs,base.group_user,1,1,1,1
+access_product_family,access_product_family,model_product_family,base.group_user,1,1,1,1
+
+access_model_traction,access_model_traction,model_model_traction,base.group_user,1,1,1,1
+access_product_specifiation,access_product_specifiation,model_product_specifiation,base.group_user,1,1,1,1
+
+access_alternative_references,access_alternative_references,model_alternative_references,base.group_user,1,1,1,1
