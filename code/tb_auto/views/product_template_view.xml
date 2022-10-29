@@ -10,41 +10,53 @@
                 <field name="image_1920" widget="image" class="oe_avatar sizeproduct" options="{'preview_image': 'image_128','zoom':True ,'size':[200,200]}" />
             </xpath>
 
-            <xpath expr="//div[@class='oe_title']" position="replace">
-                <field name="purchase_ok" invisible="1" />
-                <field name="sale_ok" invisible="1" />
-                <div class="oe_title">
-                    <label for="name" string="Product name" />
-                    <h2>
-                        <div class="d-flex">
-                            <field name="name" class="text-uppercase" />
-                        </div>
-                    </h2>
+            <xpath expr="//div[@name='options']" position="after">
+                <field name="artec_company_auto" invisible="1" />
+                <!-- <label for="artec_company_auto" /> -->
+            </xpath>
+
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="class">text-uppercase</attribute>
+            </xpath>
+
+            <xpath expr="//div[@name='options']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//label[@for='is_general_mean']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='is_general_mean']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <div class="oe_title" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <div class="d-flex">
                         <span class="d-inline-block">
                             <field name="artec_has_multi_name" />
                             <label for="artec_has_multi_name" />
                         </span>
                     </div>
-                    <div class="d-flex">
-                        <span attrs="{'invisible':[('artec_has_multi_name', '=', False)]}">
+                    <div class="d-flex" attrs="{'invisible':[('artec_has_multi_name', '=', False)]}">
+                        <span>
                             <label for="artec_name_ids" />
                             <field name="artec_name_ids" widget="many2many_tags" class="text-uppercase" />
                         </span>
                     </div>
-                </div>
-                <div class="oe_title">
                     <label for="artec_designation" string="Designation" />
-                    <h2>
+                    <h1>
                         <div class="d-flex">
                             <field name="artec_designation" widget="artec_uppercase" />
                         </div>
-                    </h2>
+                    </h1>
                 </div>
             </xpath>
 
+
             <xpath expr="//page[@name='general_information']" position="before">
-                <page string="References" name="reference">
+                <page string="References" name="reference" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <group name="reference" string="Reference">
                         <field name="default_code" string="Réference TBA" readonly="1" />
                         <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" />
@@ -56,8 +68,11 @@
                             </tree>
                         </field>
                     </group>
+                    <group>
+                        <field name="company_id" />
+                    </group>
                 </page>
-                <page string="Constructors" name="constructors">
+                <page string="Constructors" name="constructors" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <group>
                         <field name="artec_constructor_ids">
                             <tree editable="bottom">
@@ -66,7 +81,7 @@
                         </field>
                     </group>
                 </page>
-                <page string="Cars and Position" name="compatible_cars">
+                <page string="Cars and Position" name="compatible_cars" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <group>
                         <field name="artec_front_ids" widget="many2many_tags" class="text-uppercase" />
                         <field name="artec_side_ids" widget="many2many_tags" class="text-uppercase" />
@@ -89,11 +104,12 @@
                         </tree>
                     </field>
                 </page>
-                <page string="Attributes" name="attributes">
+                <page string="Attributes" name="attributes" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <group>
                         <field name="artec_mark_id" class="text-uppercase" />
                         <field name="artec_product_family" class="text-uppercase" />
                         <field name="artec_category_ids" widget="many2many_tags" class="text-uppercase" />
+                        <field name="barcode" class="text-uppercase" />
                     </group>
                     <group string="Information douaniere">
                         <field name="artec_hs_code" class="text-uppercase" />
@@ -114,19 +130,43 @@
             </xpath>
 
             <xpath expr="//page[@name='purchase']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
             <xpath expr="//page[@name='general_information']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
-            <xpath expr="//page[@name='inventory']" position="attributes">
-                <attribute name="invisible">True</attribute>
+            <xpath expr="//page[@name='inventory']/group[1]" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']/group[3]" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']/group[4]" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']/group[5]" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='packaging_ids']" position="replace">
+                <field name="packaging_ids" nolabel="1" context="{'tree_view_ref':'product.product_packaging_tree_view2', 'form_view_ref':'product.product_packaging_form_view2', 'default_company_id': company_id, 'default_product_id': context.get('product_variant_id', active_id) } "/>
             </xpath>
 
             <xpath expr="//page[@name='invoicing']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='sales']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='variants']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
         </field>
@@ -137,28 +177,13 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='responsible_id']" position="replace">
-                <field name="artec_mark_id" class="text-uppercase" />
-            </xpath>
-            <xpath expr="//field[@name='name']" position="replace">
-                <field name="name" class="text-uppercase" />
-            </xpath>
-            <!-- <tree position="attributes">
-                <attribute name="decoration-danger">qty_available &lt;= 0</attribute>
-            </tree> -->
 
-            <!-- <xpath expr="//field[@name='priority']" position="attributes">
-                <attribute name="invisible">True</attribute>
-            </xpath> -->
-            <xpath expr="//field[@name='default_code']" position="attributes">
-                <attribute name="invisible">True</attribute>
-            </xpath>
-            <xpath expr="//field[@name='name']" position="before">
-                <field name="default_code" />
-            </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" />
+                <field name="artec_company_auto" invisible="1" />
+                <!-- <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" attrs="{'invisible':[('artec_company_auto','=', False)]}" />
+                <field name="artec_mark_id" class="text-uppercase" attrs="{'invisible':[('artec_company_auto','=', False)]}" /> -->
             </xpath>
+
         </field>
     </record>
 

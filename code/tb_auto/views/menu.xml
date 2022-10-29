@@ -2,6 +2,7 @@
 <odoo>
     <menuitem id="main_pieces_auto_menu" 
               name="TB Auto"
+              web_icon="tb_auto,static/description/icon.png"
     />
     <menuitem id="pieces_auto_menu" 
               name="Products"

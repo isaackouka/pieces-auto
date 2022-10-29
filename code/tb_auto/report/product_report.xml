@@ -4,8 +4,8 @@
         <field name="name">Fiche Product</field>
         <field name="model">product.template</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">pieces_auto.product_template</field>
-        <field name="report_file">pieces_auto.product_template</field>
+        <field name="report_name">tb_auto.product_template</field>
+        <field name="report_file">tb_auto.product_template</field>
         <field name="print_report_name">'Fiche Product - %s' % (object.name)</field>
         <field name="binding_model_id" ref="stock.model_product_template"/>
         <field name="binding_type">report</field>
@@ -59,11 +59,11 @@
                         </div>
                         <div class="mb-2">
                             <span class="font-weight-bold">Marque : </span>
-                            <span t-field="o.mark_id.name"/>
+                            <span t-field="o.artec_mark_id.name"/>
                         </div>
                         <div class="mb-2">
                             <span class="font-weight-bold">Véhicules Compatible : </span>
-                            <t t-foreach="o.compatible_car_ids" t-as="comp">
+                            <t t-foreach="o.artec_compatible_car_ids" t-as="comp">
                                 <div>
                                     <span t-field="comp.model_id.name"/> :
                                     <t t-foreach="comp.engine_ids" t-as="engine">

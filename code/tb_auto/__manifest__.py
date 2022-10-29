@@ -16,7 +16,7 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base','mail','contacts','product','stock','account'],
+    'depends': ['base','mail','contacts','product','stock','account','general_means_management'],
     'application': True,
 
     'data': [
@@ -30,6 +30,7 @@
         'views/car_model.xml',
         'views/product_position.xml',
         'views/product_family.xml',
+        'views/product_packaging_view.xml',
         'views/menu.xml',
         'report/product_report.xml',
     ],

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.ui.view" id="artec_product_packaging_tree_inherit">
+        <field name="name">Artec Product Packaging Tree Inherit</field>
+        <field name="model">product.packaging</field>
+        <field name="inherit_id" ref="product.product_packaging_tree_view2" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="package" />
+                <field name="number_package" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="artec_product_packaging_form_inherit">
+        <field name="name">Artec Product Packaging Form Inherit</field>
+        <field name="model">product.packaging</field>
+        <field name="inherit_id" ref="product.product_packaging_form_view2" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/group[1]" position="before">
+                <group>
+                    <field name="product_id" invisible="1" />
+                    <field name="contain_packages" />
+                    <field name="package" attrs="{'invisible':[('contain_packages', '=', False)]}" />
+                    <field name="number_package" attrs="{'invisible':[('contain_packages', '=', False)]}" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

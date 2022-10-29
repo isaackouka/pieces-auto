@@ -37,6 +37,8 @@ class CarModel(models.Model):
 class ModelGeneration(models.Model):
     _name = 'model.generation'
     _description = 'Model generation'
+    _order = 'generation'
+
 
     name = fields.Char(
         compute='_compute_name',

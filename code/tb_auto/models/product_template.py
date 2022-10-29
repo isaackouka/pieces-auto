@@ -8,6 +8,19 @@ class ProductTemplate(models.Model):
 
     _inherit = "product.template"
 
+    def _default_artec_company_auto(self):
+        company = self.env['res.company'].browse(
+            self._context.get('allowed_company_ids'))
+        if len(company) == 1 and company[0].name not in ['EURL BOUKHENOUFA IMPORT/EXPORT', 'SARL CONFI CHOC', 'SARL TB INGREDIENTS']:
+            return True
+        else:
+            return False
+
+    artec_company_auto = fields.Boolean(
+        default=_default_artec_company_auto,
+        store=False,
+    )
+
     name = fields.Char(
         string='Product name',
         required=True,
@@ -25,8 +38,8 @@ class ProductTemplate(models.Model):
     )
 
     artec_designation = fields.Char(
-       compute='_compute_artec_designation',
-       string='Designation'
+        compute='_compute_artec_designation',
+        string='Designation'
     )
 
     artec_reference_oe = fields.Many2many(
@@ -78,7 +91,7 @@ class ProductTemplate(models.Model):
         comodel_name='product.position',
         string='Position'
     )
-    
+
     artec_specification = fields.Many2many(
         comodel_name='product.specifiation',
         string='Specification'
@@ -87,13 +100,12 @@ class ProductTemplate(models.Model):
     artec_observation = fields.Char(
         string='Observations'
     )
-    
+
     artec_compatible_car_ids = fields.Many2many(
         comodel_name='compatible.car',
     )
 
     artec_hs_code = fields.Char(
-        required=True, 
         string='HS Code'
     )
 
@@ -115,23 +127,21 @@ class ProductTemplate(models.Model):
         'product_id'
     )
 
-
-
-
     @api.depends('artec_reference_oe')
     def _compute_short_reference(self):
         for record in self:
             if record.artec_reference_oe:
                 for ref in record.artec_reference_oe:
-                    if (len(ref.name)==11 and ref.name[5]=='-'):
-                        record.artec_short_reference = ref.name[6] + ref.name[7]
+                    if (len(ref.name) == 11 and ref.name[5] == '-'):
+                        record.artec_short_reference = ref.name[6] + \
+                            ref.name[7]
                         break
                     else:
                         record.artec_short_reference = ''
             else:
                 record.artec_short_reference = ''
 
-    @api.depends('name', 'artec_compatible_car_ids', 'artec_specification', 'artec_front_ids', 'artec_side_ids', 'artec_position_ids','artec_mark_id','artec_constructor_ids')
+    @api.depends('name', 'artec_compatible_car_ids', 'artec_specification', 'artec_front_ids', 'artec_side_ids', 'artec_position_ids', 'artec_mark_id', 'artec_constructor_ids')
     def _compute_artec_designation(self):
         for record in self:
             list_cars = ''
@@ -140,27 +150,34 @@ class ProductTemplate(models.Model):
                 designation = record.name
             list_cars = '' + '/'.join(['{} {}'.format(
                 c.model_id.name,
-                '(' + '-'.join(c.generation_ids.mapped('name')) + ')' if c.generation_ids else ''
+                '(' + '-'.join(c.generation_ids.mapped('name')) +
+                ')' if c.generation_ids else ''
             ) for c in record.artec_compatible_car_ids])
             designation = designation + ' ' + list_cars
-            front = '('+'-'.join(record.artec_front_ids.mapped('name')) +')' if record.artec_front_ids else ''
+            front = '('+'-'.join(record.artec_front_ids.mapped('name')
+                                 ) + ')' if record.artec_front_ids else ''
             designation = designation + ' ' + front
-            side = '('+'-'.join(record.artec_side_ids.mapped('name')) +')' if record.artec_side_ids else ''
+            side = '('+'-'.join(record.artec_side_ids.mapped('name')
+                                ) + ')' if record.artec_side_ids else ''
             designation = designation + ' ' + side
-            position = '('+'-'.join(record.artec_position_ids.mapped('name')) +')' if record.artec_position_ids else ''
+            position = '('+'-'.join(record.artec_position_ids.mapped('name')
+                                    ) + ')' if record.artec_position_ids else ''
             designation = designation + ' ' + position
-            specification = '('+'-'.join(record.artec_specification.mapped('name')) +')' if record.artec_specification else ''
+            specification = '('+'-'.join(record.artec_specification.mapped('name')
+                                         ) + ')' if record.artec_specification else ''
             designation = designation + ' ' + specification
             mark = record.artec_mark_id.name if record.artec_mark_id else ''
             designation = designation + ' ' + mark
-            constructor = '-'.join(record.artec_constructor_ids.mapped('name')) if record.artec_constructor_ids else ''
+            constructor = '-'.join(record.artec_constructor_ids.mapped('name')
+                                   ) if record.artec_constructor_ids else ''
             designation = designation + ' ' + constructor
             record.artec_designation = designation
-                            
+
     @api.model
     def create(self, vals):
-        vals['default_code'] = self.env['ir.sequence'].next_by_code('tba.reference') or _("New")
-        return super(ProductTemplate,self).create(vals)
+        vals['default_code'] = self.env['ir.sequence'].next_by_code(
+            'tba.reference') or _("New")
+        return super(ProductTemplate, self).create(vals)
 
 
 class ProductMark(models.Model):
@@ -171,7 +188,7 @@ class ProductMark(models.Model):
     name = fields.Char(
         required=True
     )
-    image = fields.Image() 
+    image = fields.Image()
 
 
 class ProductReferenceOE(models.Model):
@@ -188,18 +205,18 @@ class AlternativeReferences(models.Model):
 
     mark_id = fields.Many2one(
         comodel_name='product.mark',
-        required=True, 
+        required=True,
     )
 
     reference = fields.Char(
         string='Reference',
-        required=True, 
+        required=True,
     )
 
     product_id = fields.Many2one(
         comodel_name='product.template'
     )
-    
+
 
 class ProductName(models.Model):
     _name = 'product.name'
@@ -207,6 +224,7 @@ class ProductName(models.Model):
     name = fields.Char(
         required=True
     )
+
 
 class ProductSpecification(models.Model):
     _name = 'product.specifiation'
