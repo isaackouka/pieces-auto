@@ -9,3 +9,4 @@ from . import product_pisition
 from . import product_customs
 from . import product_family
 from . import product_packaging
+from . import sale_order

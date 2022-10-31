@@ -75,12 +75,12 @@
               sequence="4"
     />
     <menuitem id="product_family_menu" 
-              name="Product Categories" 
+              name="Products family" 
               parent="setting_auto_menu"
               action="product_family_action"
     />
     <menuitem id="pieces_auto_menu_product_category" 
-              name="Products family" 
+              name="Product Categories" 
               action="product.product_category_action_form"
               parent="setting_auto_menu" 
     />

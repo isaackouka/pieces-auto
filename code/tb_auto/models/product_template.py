@@ -8,6 +8,12 @@ class ProductTemplate(models.Model):
 
     _inherit = "product.template"
 
+    def _get_buy_route(self):
+        buy_route = self.env.ref('tb_auto.route_warehouse0_buy', raise_if_not_found=False)
+        if buy_route:
+            return buy_route.ids
+        return []
+
     def _default_artec_company_auto(self):
         company = self.env['res.company'].browse(
             self._context.get('allowed_company_ids'))
@@ -122,10 +128,17 @@ class ProductTemplate(models.Model):
     artec_locally_made = fields.Boolean(
         string='Locally made'
     )
+
     artec_customs_ids = fields.One2many(
         'product.customs',
         'product_id'
     )
+
+    artec_sale_in_pack = fields.Boolean(
+        default=False,
+        string='Sale in pack'
+    )
+
 
     @api.depends('artec_reference_oe')
     def _compute_short_reference(self):

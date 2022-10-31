@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record model="ir.ui.view" id="artec_sale_order_form_inherit">
+        <field name="name">Artec Sale Order Form Inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_packaging']" position="after">
+                <field name="artec_number_of_package" attrs="{'readonly': [('product_packaging', '=', False)]}" />
+                <field name="artec_sale_in_pack" invisible="1" />
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="attributes">
+                <attribute name="attrs">{'readonly': ['|',('artec_sale_in_pack', '=', True),('product_packaging', '!=', False)]}</attribute>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

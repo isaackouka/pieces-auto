@@ -31,6 +31,7 @@
         'views/product_position.xml',
         'views/product_family.xml',
         'views/product_packaging_view.xml',
+        'views/sale_order.xml',
         'views/menu.xml',
         'report/product_report.xml',
     ],

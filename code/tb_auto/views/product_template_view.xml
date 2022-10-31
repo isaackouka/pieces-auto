@@ -141,8 +141,10 @@
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
-            <xpath expr="//page[@name='inventory']/group[3]" position="attributes">
-                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            <xpath expr="//page[@name='inventory']/group[1]" position="after">
+                <group attrs="{'invisible':[('artec_company_auto','=', False)]}">
+                    <field name="artec_sale_in_pack" />
+                </group>
             </xpath>
 
             <xpath expr="//page[@name='inventory']/group[4]" position="attributes">
@@ -150,6 +152,10 @@
             </xpath>
 
             <xpath expr="//page[@name='inventory']/group[5]" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='inventory']/group[6]" position="attributes">
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
