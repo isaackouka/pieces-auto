@@ -55,6 +55,11 @@ class ModelGeneration(models.Model):
     year_end = fields.Selection([(str(y), str(y))
                                 for y in range(1970, (datetime.now().year)+1)])
 
+    engine_ids = fields.Many2many(
+        comodel_name='car.engine',
+        required=True,
+    )
+
     @api.depends('generation')
     def _compute_name(self):
         for record in self:

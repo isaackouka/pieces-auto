@@ -6,7 +6,7 @@ from odoo.osv import expression
 
 class ProductTemplate(models.Model):
 
-    _inherit = "product.template"
+    _inherit = 'product.template'
 
     def _get_buy_route(self):
         buy_route = self.env.ref('tb_auto.route_warehouse0_buy', raise_if_not_found=False)
@@ -139,6 +139,12 @@ class ProductTemplate(models.Model):
         string='Sale in pack'
     )
 
+    artec_image_ids = fields.One2many(
+        comodel_name='product.image', 
+        inverse_name='product_id', 
+        string='IMAGES')
+    
+
 
     @api.depends('artec_reference_oe')
     def _compute_short_reference(self):
@@ -244,4 +250,13 @@ class ProductSpecification(models.Model):
 
     name = fields.Char(
         required=True
+    )
+
+class ProductImage(models.Model):
+    _inherit = 'product.image'
+
+    product_id = fields.Many2one(
+        comodel_name='product.template', 
+        index=True, 
+        ondelete='cascade'
     )

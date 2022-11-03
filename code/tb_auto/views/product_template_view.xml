@@ -6,8 +6,8 @@
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
 
-            <xpath expr="//field[@name='image_1920']" position="replace">
-                <field name="image_1920" widget="image" class="oe_avatar sizeproduct" options="{'preview_image': 'image_128','zoom':True ,'size':[200,200]}" />
+            <xpath expr="//field[@name='image_1920']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
             <xpath expr="//div[@name='options']" position="after">
@@ -31,7 +31,200 @@
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
-            <xpath expr="//div[@class='oe_title']" position="after">
+            <xpath expr="//div[@class='oe_title']" position="attributes">
+                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
+            </xpath>
+
+
+            <xpath expr="//notebook" position="before">
+                <notebook attrs="{'invisible':[('artec_company_auto','=', False)]}">
+
+                    <page name="general_auto" string="GÉNÉRAL">
+                        <group string="GÉNÉRAL">
+                            <div class="row">
+                                <div class="col-3">
+                                    <field name="image_1920" widget="image" nolabel="1" options="{'preview_image': 'image_128','zoom':True ,'size':[200,200]}" />
+                                </div>
+                                <div class="col-9">
+                                    <div class="row">
+                                        <label class="font-weight-bold mr-4" for="artec_product_family" string="NOM" />
+                                        <field name="name" string="NOM" class="text-uppercase" />
+                                    </div>
+                                    <div class="row">
+                                        <label class="font-weight-bold mr-4" for="artec_product_family" string="FAMILLE" />
+                                        <field name="artec_product_family" string="FAMILLE" class="text-uppercase" />
+                                    </div>
+                                    <div class="row">
+                                        <label class="font-weight-bold mr-4" for="artec_category_ids" string="CATÉGORIE" />
+                                        <field name="artec_category_ids" widget="many2many_tags" class="text-uppercase" />
+                                    </div>
+
+                                    <div class="row">
+                                        <label class="font-weight-bold mr-4" for="barcode" string="CODE BARRE" />
+                                        <field name="barcode" class="text-uppercase" />
+                                    </div>
+                                    <div class="row">
+                                        <label class="font-weight-bold mr-4" for="company_id" string="COMPANY" />
+                                        <field name="company_id" />
+                                    </div>
+                                </div>
+                            </div>
+                        </group>
+
+                        <notebook>
+                            <page name="designation" string="DÉSIGNATION">
+                                <div class="oe_title" attrs="{'invisible':[('artec_company_auto','=', False)]}">
+                                    <div class="d-flex">
+                                        <span class="d-inline-block">
+                                            <field name="artec_has_multi_name" />
+                                            <label for="artec_has_multi_name" />
+                                        </span>
+                                    </div>
+                                    <div class="d-flex" attrs="{'invisible':[('artec_has_multi_name', '=', False)]}">
+                                        <span>
+                                            <label for="artec_name_ids" />
+                                            <field name="artec_name_ids" widget="many2many_tags" class="text-uppercase" />
+                                        </span>
+                                    </div>
+                                    <label for="artec_designation" string="Designation" />
+                                    <h1>
+                                        <div class="d-flex">
+                                            <field name="artec_designation" widget="artec_uppercase" />
+                                        </div>
+                                    </h1>
+                                </div>
+                            </page>
+                            <page name="obervation" string="OBSERVATION">
+                                <h2>
+                                    <div class="d-flex">
+                                        <field name="artec_observation" class="text-uppercase" />
+                                    </div>
+                                </h2>
+                            </page>
+
+                        </notebook>
+
+                        <notebook>
+                            <page string="REFERENCES" name="reference" attrs="{'invisible':[('artec_company_auto','=', False)]}">
+                                <group name="reference" string="Reference">
+                                    <field name="default_code" string="Réference TBA" readonly="1" />
+                                    <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" />
+                                    <field name="artec_short_reference" class="text-uppercase" />
+                                    <field name="artec_reference_mark_ids" string="Alternative references">
+                                        <tree editable="bottom">
+                                            <field name="mark_id" class="text-uppercase" />
+                                            <field name="reference" class="text-uppercase" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page string="PROPRIÉTÉS">
+                                <group>
+                                    <group>
+                                        <field name="type" class="text-uppercase" />
+                                        <field name="artec_mark_id" class="text-uppercase" />
+                                    </group>
+                                    <group>
+                                        <field name="uom_id" class="text-uppercase" />
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Constructors" name="constructors">
+                                <group>
+                                    <field name="artec_constructor_ids">
+                                        <tree editable="bottom">
+                                            <field name="name" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Cars and Position" name="compatible_cars">
+                                <group>
+                                    <field name="artec_front_ids" widget="many2many_tags" class="text-uppercase" />
+                                    <field name="artec_side_ids" widget="many2many_tags" class="text-uppercase" />
+                                    <field name="artec_position_ids" widget="many2many_tags" class="text-uppercase" />
+                                    <field name="artec_specification" widget="many2many_tags" class="text-uppercase" />
+                                </group>
+
+                                <label for="artec_compatible_car_ids" string="Compatible cars" />
+                                <field name="artec_compatible_car_ids" widget="one2many">
+                                    <tree editable="bottom">
+                                        <control>
+                                            <create name="add_car_control" string="Add Car" />
+                                        </control>
+                                        <field name="model_id" class="text-uppercase" />
+                                        <field name="generation_ids" widget="many2many_tags" />
+                                        <field name="engine_ids" class="text-uppercase" />
+                                        <field name="energie" class="text-uppercase" />
+                                        <field name="gearbox_ids" class="text-uppercase" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Attributes" name="attributes"></page>
+                        </notebook>
+
+                    </page>
+
+                    <page name="qty_auto" string="QUANTITÉ TOTALE"></page>
+
+                    <page name="prix_auto" string="PRIX"></page>
+
+                    <page name="colisage_auto" string="COLISAGE">
+                        <group>
+                            <field name="artec_sale_in_pack" />
+                        </group>
+                        <field name="packaging_ids" nolabel="1" context="{'tree_view_ref':'product.product_packaging_tree_view2', 'form_view_ref':'product.product_packaging_form_view2', 'default_company_id': company_id, 'default_product_id': context.get('product_variant_id', active_id) } " />
+                    </page>
+
+                    <page name="achat_auto" string="ACHAT">
+                        <field name="seller_ids" context="{'default_product_tmpl_id':context.get('product_tmpl_id',active_id), 'product_template_invisible_variant': True, 'tree_view_ref':'purchase.product_supplierinfo_tree_view2'}" nolabel="1" attrs="{'invisible': [('product_variant_count','&gt;',1)], 'readonly': [('product_variant_count','&gt;',1)]}" />
+                        
+                        <group name="bill" position="inside">
+                            <field name="purchase_method" widget="radio" />
+                        </group>
+
+                        <group string="Purchase Description">
+                            <field name="description_purchase" nolabel="1" placeholder="This note is added to purchase orders." />
+                        </group>
+
+                        <group string="Warning when Purchasing this Product" groups="purchase.group_warning_purchase">
+                            <field name="purchase_line_warn" nolabel="1" />
+                            <field name="purchase_line_warn_msg" colspan="3" nolabel="1" attrs="{'required':[('purchase_line_warn','!=','no-message')],'readonly':[('purchase_line_warn','=','no-message')], 'invisible':[('purchase_line_warn','=','no-message')]}" />
+                        </group>
+                    </page>
+
+                    <page name="propriete_auto" string="PROPRIÉTÉS"></page>
+
+                    <page name="tax_auto" string="TAXES">
+                        <group string="Information douaniere">
+                            <field name="artec_hs_code" class="text-uppercase" />
+                            <field name="artec_hs_designation" class="text-uppercase" />
+                            <field name="artec_tax_custom" />
+                            <field name="artec_locally_made" />
+                            <field name="artec_customs_ids" string="Product country">
+                                <tree editable="bottom">
+                                    <field name="manifacturing_country" class="text-uppercase" />
+                                    <field name="origin_country" class="text-uppercase" />
+                                    <field name="price_preferential" class="text-uppercase" />
+                                    <field name="tax" widget="many2many_tags" class="text-uppercase" />
+                                    <field name="tva" class="text-uppercase" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+
+                    <page name="image_auto" string="IMAGES">
+                        <group>
+                            <field name="artec_image_ids" class="o_website_sale_image_list" context="{'default_name': name}" mode="kanban" add-label="Add a Media" nolabel="1"/>
+                        </group>
+                    </page>
+
+                </notebook>
+            </xpath>
+
+            <!-- <xpath expr="//div[@class='oe_title']" position="after">
                 <div class="oe_title" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <div class="d-flex">
                         <span class="d-inline-block">
@@ -52,10 +245,9 @@
                         </div>
                     </h1>
                 </div>
-            </xpath>
+            </xpath> -->
 
-
-            <xpath expr="//page[@name='general_information']" position="before">
+            <!-- <xpath expr="//page[@name='general_information']" position="before">
                 <page string="References" name="reference" attrs="{'invisible':[('artec_company_auto','=', False)]}">
                     <group name="reference" string="Reference">
                         <field name="default_code" string="Réference TBA" readonly="1" />
@@ -127,7 +319,7 @@
                         </field>
                     </group>
                 </page>
-            </xpath>
+            </xpath> -->
 
             <xpath expr="//page[@name='purchase']" position="attributes">
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
@@ -137,30 +329,8 @@
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
             </xpath>
 
-            <xpath expr="//page[@name='inventory']/group[1]" position="attributes">
+            <xpath expr="//page[@name='inventory']" position="attributes">
                 <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
-            </xpath>
-
-            <xpath expr="//page[@name='inventory']/group[1]" position="after">
-                <group attrs="{'invisible':[('artec_company_auto','=', False)]}">
-                    <field name="artec_sale_in_pack" />
-                </group>
-            </xpath>
-
-            <xpath expr="//page[@name='inventory']/group[4]" position="attributes">
-                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
-            </xpath>
-
-            <xpath expr="//page[@name='inventory']/group[5]" position="attributes">
-                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
-            </xpath>
-
-            <xpath expr="//page[@name='inventory']/group[6]" position="attributes">
-                <attribute name="attrs">{'invisible': [('artec_company_auto', '=', True)]}</attribute>
-            </xpath>
-
-            <xpath expr="//field[@name='packaging_ids']" position="replace">
-                <field name="packaging_ids" nolabel="1" context="{'tree_view_ref':'product.product_packaging_tree_view2', 'form_view_ref':'product.product_packaging_form_view2', 'default_company_id': company_id, 'default_product_id': context.get('product_variant_id', active_id) } "/>
             </xpath>
 
             <xpath expr="//page[@name='invoicing']" position="attributes">
@@ -185,9 +355,13 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='name']" position="after">
-                <field name="artec_company_auto" invisible="1" />
+                <field name="artec_company_auto" />
                 <!-- <field name="artec_reference_oe" widget="many2many_tags" class="text-uppercase" attrs="{'invisible':[('artec_company_auto','=', False)]}" />
                 <field name="artec_mark_id" class="text-uppercase" attrs="{'invisible':[('artec_company_auto','=', False)]}" /> -->
+            </xpath>
+
+            <xpath expr="//field[@name='default_code']" position="after">
+                <field name="artec_designation" class="text-uppercase" attrs="{'invisible':[('artec_company_auto','=', False)]}" />
             </xpath>
 
         </field>
@@ -205,6 +379,7 @@
             </p>
         </field>
     </record>
+
     <record id="product_specification_view_tree" model="ir.ui.view">
         <field name="name">product.specifiation.view.tree</field>
         <field name="model">product.specifiation</field>

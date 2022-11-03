@@ -44,17 +44,23 @@
                     </group>
 
                     <notebook>
-                        <page string="Generations">
+                        <page string="Generations and Engine">
                             <field name="generation_ids" widget="one2many">
-                                <tree editable="bottom">
+                                <tree>
                                     <field name="generation" class="text-uppercase" />
                                     <field name="year_start" string="From" class="text-uppercase" />
                                     <field name="year_end" string="To" class="text-uppercase" />
+                                    <field name="engine_ids" class="text-uppercase" widget="many2many_tags" />
                                 </tree>
+                                <form>
+                                    <group>
+                                        <field name="generation" class="text-uppercase" />
+                                        <field name="year_start" string="From" class="text-uppercase" />
+                                        <field name="year_end" string="To" class="text-uppercase" />
+                                        <field name="engine_ids" class="text-uppercase" />
+                                    </group>
+                                </form>
                             </field>
-                        </page>
-                        <page string="Engine">
-                            <field name="engine_ids" class="text-uppercase" />
                         </page>
                         <page string="Boite vitesse et Traction">
                             <group>
@@ -66,8 +72,6 @@
                                 </field>
                                 <field name="tractions_ids" />
                             </group>
-
-
                         </page>
                     </notebook>
                 </sheet>

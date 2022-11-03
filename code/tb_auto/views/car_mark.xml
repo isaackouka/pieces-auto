@@ -15,7 +15,7 @@
         <field name="model">car.mark</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" class="text-uppercase"/>
+                <field name="name" class="text-uppercase" />
             </tree>
         </field>
     </record>
